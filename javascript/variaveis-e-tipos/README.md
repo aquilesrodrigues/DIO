@@ -8,7 +8,7 @@ Palavras reservadas - Var e let
 **var** --> scope is global
 **let** --> scope is inside the if-block
 
-**Redeclaração** --> var a = 11; :left_speech_bubble: Você informa o tipo, o nome e o valor
+**Redeclaração** --> var a = 11; :left_speech_bubble: Você informa o tipo, o nome e o valor </br>
 **Reatribuição** --> a = 11; :left_speech_bubble: Você só informa o nome e valor
 
 **Hoisting** --> atribuir um valor a uma variável antes de declará-la
