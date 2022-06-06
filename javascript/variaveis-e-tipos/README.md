@@ -1,10 +1,10 @@
 **Camel Case** - duas palavras juntas a segunda com primeira Letra Maiúscula
 
-**Upper Case Snake Case** --> Utilizados por constantes, todas as letras em maíscula[Upper Case] e separadas por Underline{snake case}
+**Upper Case Snake Case** --> Utilizados por constantes, todas as letras em maíscula[_Upper Case_] e separadas por Underline{_snake case_}
 
 Valores dinâmicos:
 
-Palavras reservadas - Var e let
+Palavras reservadas - Var e let </br>
 **var** --> scope is global
 **let** --> scope is inside the if-block
 
@@ -15,7 +15,7 @@ Palavras reservadas - Var e let
 
 Exemplo de como funciona o Hoisting
 
-Neste exemplo irá funcionar porque ele entende que é uma **_var_**iável global.
+Neste exemplo irá funcionar porque ele entende que é uma *var*iável global:
 
 ```javascript
 numberOne = 1;
@@ -24,7 +24,7 @@ console.log(numberOne + 2);
 var numberOne;
 ```
 
-Neste exemplo NÃO irá funcionar porque ele entende que a **_let_** é de escopo e precisa ser declarado antes de atribuído.
+Neste exemplo NÃO irá funcionar porque ele entende que a **_let_** é de escopo e precisa ser declarado antes de atribuído:
 
 ```javascript
 numberOne = 1;
