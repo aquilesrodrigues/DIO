@@ -8,12 +8,14 @@ Palavras reservadas - Var e let
 **var** --> scope is global
 **let** --> scope is inside the if-block
 
-Redeclaração --> var a = 11; - Você informa o tipo, o nome e o valor
-Reatribuição --> a = 11; - Você só informa o nome e valor
+**Redeclaração** --> var a = 11; :left_speech_bubble: Você informa o tipo, o nome e o valor
+**Reatribuição** --> a = 11; :left_speech_bubble: Você só informa o nome e valor
 
-:left_speech_bubble: **Hoisting** --> atribuir um valor a uma variável antes de declará-la
+**Hoisting** --> atribuir um valor a uma variável antes de declará-la
 
 Exemplo de como funciona o Hoisting
+
+Neste exemplo irá funcionar porque ele entende que é uma **_var_**iável global.
 
 ```javascript
 numberOne = 1;
@@ -22,7 +24,7 @@ console.log(numberOne + 2);
 var numberOne;
 ```
 
-Neste exemplo irá funcionar porque ele entende que é uma **_var_**iável global.
+Neste exemplo NÃO irá funcionar porque ele entende que a **_let_** é de escopo e precisa ser declarado antes de atribuído.
 
 ```javascript
 numberOne = 1;
@@ -30,8 +32,6 @@ console.log(numberOne + 2);
 
 let numberOne;
 ```
-
-Neste exemplo NÃO irá funcionar porque ele entende que a **_let_** é de escopo e precisa ser declarado antes de atribuído.
 
 > :vertical_traffic_light: Redeclaração e Reatribuição
 
