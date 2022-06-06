@@ -31,5 +31,5 @@ var LAST_NAME; // Global e não se deve usar com SNAKE_UPPER_CASE
 
 console.log(FIRST_NAME);
 
-FIRST_NAME = "Maria"; // Constantes não aceitam reatribuição!!!!
+//FIRST_NAME = "Maria"; // Constantes não aceitam reatribuição!!!!
 // Irá ocorrer erro!
