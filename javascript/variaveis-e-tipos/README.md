@@ -57,7 +57,7 @@ if (firstName == "João") {
 console.log(`Fora do Bloco if: ${firstName} ${lastName} ${alias}`);
 ```
 
-AS CONSTANTES:
+#### CONSTANTES
 
 São declaradas em SNAKE_UPPER_CASE, escopo de bloco, não faz **hoisting**
 
@@ -79,7 +79,7 @@ FIRST_NAME = "Maria"; // Constantes não aceitam reatribuição!!!!
 
 Os dados em Javascript são divididos em 2 grandes grupos: **Primitivos** e os **Composite / Non-Primitive**.
 
-#### Primitivos
+### Primitivos
 
 (numbers, string, boolean, null/underfined)
 
@@ -87,9 +87,9 @@ Não possuem métodos imbutidos, são escritos em letras minúsculas.
 
 Existem funções que criam objetos do tipo primitivos.
 
-**string**: utilizado para tratamento de textos.
+#### strings
 
-Em sua declaração podemos utilizar, aspas ou crases com interpolação **templates strings** `${}`.
+Em sua declaração podemos utilizar, aspas "" / '' ou crases com interpolação **templates strings** `${}`.
 
 Os dados do tipo **strings** são iteráveis.
 
@@ -119,6 +119,96 @@ let exemplo = new String("texto")
 
 Um objeto string possui inúmeros métodos para serem utilizados.
 
-#### Composite / Non-Primitive
+#### numbers
 
-typeof() - método que exibe o tipo do dado
+Biblioteca Math
+
+É um Objeto que possui várias funções para ajudar com cálculos.
+
+```javascript
+let fiveByThree = 5 / 3;
+Math.floor(fiveByThree); // arredonda para baixo
+Math.ceil(fivByThree); // arredonda para teto(cima)
+```
+
+#### Boleans
+
+```javascript
+let validation = 3 === 0;
+console.log(validation); // retorna um boleano 'false'
+console.log(!validation); // retorna um boleano 'true'
+validation.toString(); // retorna seu valor como string
+```
+
+### Empty / null / undefinid
+
+```javascript
+foo; // foo não existe, não foi definido e jamais foi inicializado:
+
+// "ReferenceError: foo is not defined"
+
+var foo = null; // // foo é conhecido e existe, mas não aponta para nenhum tipo ou valor
+
+console.log(typeof foo); // "null"
+
+// typeof() - método que exibe o tipo do dado
+```
+
+O valor null é um literal, e não uma propriedade do objeto global (como o undefined pode ser). O desenhos das APIs, o null as vezes é devolvido no lugar de um objeto que era esperado.
+
+**null** é um valor não definido, mas de forma induzida, ou seja, o programador colocou null em alguma propriedade de objeto
+
+**undefined** é quando um valor de uma variável não está definido
+
+### Composite / Non-Primitive
+
+### Array
+
+```javascript
+let array = [];
+array.push(3); // insere elemento na posição 0
+array.push(2); // insere elemento na posição 0
+array.pop(); // elimina o último elemento
+array.unshifit(1); // elimina elemento na posição informada
+array.includes(2); // retorna true caso encontre o elemento
+array.every((item) => item === 5); //verifica se todos são iguais a 5
+array.some((item) => item === 5); //verifica se algum é igual a 5
+```
+
+### Objetos
+
+São declarado com chaves {} e é composto por chave:valor
+
+```javascript
+let obj = {};
+/* Definindo elementos para o objeto: */
+obj.name = "julia"; // a palavra após Um . define o nome da chave e o que está entre " " é o valor que está sendo atribuído
+obj["age"] = 20; // também é uma definição para chave e valor
+
+let recebi = "dinheiro"; // criada variável recebi e atribui valor
+
+/* Podemos passar para um objeto valores de variáveis como chave e depois atribuir um valor para esta chave */
+
+obj[recebi] = 20;
+
+/* Desta forma será criada uma chave "dinheiro" e ela receberá valor 20*/
+console.log(obj);
+/* Acessando elementos: */
+console.log(obj.name);
+console.log(obj["name"]);
+```
+
+A biblioteca Object() possui vários métodos para usar com objetos:
+
+```javascript
+Object.keys(obj); // retorna as chaves
+Object.values(obj); // retorna os valores
+```
+
+### palíndromo
+Frase ou palavra que se pode ler, indiferentemente, da esquerda para a direita ou vice-versa
+"ROMA ME TEM AMOR"
+
+
+### Substituir números pares
+
