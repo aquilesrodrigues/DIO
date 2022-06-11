@@ -1,4 +1,4 @@
-##Javascript
+# Javascript
 
 É uma linguagem de **tipagem dinâmica**, ou seja, antes de declarar um valor, você não especifica o **tipo** dele.
 
@@ -57,7 +57,7 @@ if (firstName == "João") {
 console.log(`Fora do Bloco if: ${firstName} ${lastName} ${alias}`);
 ```
 
-#### CONSTANTES
+## CONSTANTES
 
 São declaradas em SNAKE_UPPER_CASE, escopo de bloco, não faz **hoisting**
 
@@ -111,7 +111,7 @@ nome.endsWith("?") // retorna true caso string finalize com ?
 nome.replace("ã", "a") // retorna outra string com substituição
 ```
 
-**Objeto string**
+Objeto **string**
 
 new String()
 
@@ -253,3 +253,13 @@ function getFullName({ fullName: { firstName: first, lastName: last } }) {
   return `${first}  ${last}`;
 }
 ```
+
+## This
+
+Quando uma função está dentro de um objeto nós a chamamos de método!!!
+A palavra reservada **this** é uma referência de contexto.
+No exemplo, _this_ refere-se ao objeto pai.
+
+Em um objeto temos alguns métodos que podem ser utilizados para lidar com o **this**.
+
+O primeiro que vamos analisar é o **call**.

@@ -182,3 +182,110 @@ console.log(
     "oi"
   )}`
 );
+
+console.log("********* END **********\n");
+
+console.log("### For: Loop ###\n");
+
+function multiplicaPorDois(arr) {
+  let multiplicar = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    multiplicar.push(arr[i] * 2);
+  }
+  return multiplicar;
+}
+
+const meusNumeros = [2, 33, 456, 356, 40];
+console.log(multiplicaPorDois(meusNumeros));
+
+console.log("********* END **********\n");
+
+console.log("### For...in : Percorre entre propriedades do Objeto###\n");
+
+function usaPropObj(objeto) {
+  for (proprio in objeto) {
+    console.log(`| ${proprio}: ${objeto[proprio]} `);
+  }
+}
+
+const meuObjeto = {
+  nome: "João",
+  idade: "20",
+  cidade: "Salvador",
+};
+console.log(usaPropObj(meuObjeto));
+
+console.log("********* END **********\n");
+
+console.log("### For...of : Loop entre  estruturas iteráveis ###\n");
+
+function LogNumeros(nums) {
+  for (numero of nums) {
+    console.log(numero);
+  }
+}
+
+const ofNumeros = [2, 33, 456, 356, 40];
+console.log(LogNumeros(ofNumeros));
+
+console.log("********* END **********\n");
+
+console.log("### While : Loop entre  estruturas iteráveis ###\n");
+
+function exemploWhile() {
+  let num = 0;
+  while (num <= 5) {
+    console.log(num);
+    num++;
+  }
+}
+console.log(exemploWhile());
+
+console.log("********* END **********\n");
+
+console.log("### do...While : Loop entre  estruturas iteráveis ###\n");
+
+function exemploWhile() {
+  let num = 0;
+
+  do {
+    console.log(num);
+    num++;
+  } while (num <= 5);
+}
+console.log(exemploWhile());
+
+console.log("********* END **********\n");
+
+console.log("### This : palavra reservada referência do contexto. ###\n");
+
+const alguem = {
+  firstName: "Aquiles",
+  lastName: "Rodrigues",
+  id: 1,
+  fullName: function () {
+    return this.firstName + " " + this.lastName;
+  },
+  address: "Rua sem nome",
+};
+
+console.log(alguem.fullName());
+
+console.log("********* END **********\n");
+
+console.log("### Método Call/This : método utilizado para acessar o **this**. ###\n");
+
+const aluno = {
+  firstName: "Aquiles",
+  lastName: "Rodrigues",
+  job: "aluno",
+};
+const professor = {
+  firstName: "Alberto",
+  lastName: "Barros",
+  job: "Professor",
+};
+
+function
+console.log(alguem.fullName());
