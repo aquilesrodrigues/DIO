@@ -66,6 +66,11 @@ console.log(typeof foo); // "null"
 
 // typeof() - método que exibe o tipo do dado
 
+console.log("### Palíndromo ==========================");
+/* Frase ou palavra que se pode ler, indiferentemente, da esquerda para a direita ou vice-versa
+  "ROMA ME TEM AMOR"
+  */
+
 function verificapalindromo(string) {
   if (!string) return "string inexistente";
 
@@ -84,9 +89,11 @@ function verificapalindromo2(string) {
   }
   return true;
 }
+console.log(verificapalindromo("ama"));
+console.log(verificapalindromo2("abba"));
+console.log("********* END **********\n");
 
-//Substituir números pares
-
+console.log("Substituir números pares ==========");
 function substituiPares(array) {
   if (!array) {
     return `${-1} - Você não passou o parâmetro!`;
@@ -106,9 +113,28 @@ function substituiPares(array) {
 }
 
 let lista = [1, 3, 4, 6, 80, 33, 23, 90];
-console.log(verificapalindromo("ama"));
-console.log(verificapalindromo2("abba"));
 console.log(substituiPares(lista));
+
+console.log("********* END **********\n");
+
+console.log("## FUNÇÕES ##\n");
+
+console.log("### Spread ... : técnica de lidar separadamente com elementos##");
+
+function soma(x, y, z) {
+  return x + y + z;
+}
+
+const numeros = [1, 4, 8];
+console.log(
+  `Estamos utilizando um array de 3 números e com a técnica Spread ... passamos cada valor separadamente para a função soma(...numeros) ${soma(
+    ...numeros
+  )}`
+);
+
+console.log("********* END **********\n");
+
+console.log("### Rest: combina os argumentos em um array ###");
 
 function confereTamanho(...args) {
   console.log(
@@ -116,3 +142,43 @@ function confereTamanho(...args) {
   );
 }
 confereTamanho(1, 2);
+
+console.log("********* END **********\n");
+
+console.log("### if/else: Condicional ###\n");
+
+function numeroPositivo(num) {
+  const ehNegativo = num < 0;
+  const maiorQueDez = num > 10;
+
+  if (ehNegativo) {
+    return "Esse número é negativo";
+  } else if (!ehNegativo && maiorQueDez) {
+    return "Esse número é positivo e maior que 10";
+  }
+  return "Não é negativo e nem maior que 10, mas, é positivo!";
+}
+console.log(numeroPositivo(2));
+
+console.log("********* END **********\n");
+
+console.log("### Switch/case: Condicional ###\n");
+
+function getAnimal(id) {
+  switch (id) {
+    case 1:
+      return "cão";
+    case 2:
+      return "gato";
+    case 3:
+      return "pássaro";
+    default:
+      return "peixe";
+  }
+}
+console.log(`O Switch/case retornou case 3 - ${getAnimal(3)}`);
+console.log(
+  `O Switch/case recebeu string e por isso retornou o defaut - ${getAnimal(
+    "oi"
+  )}`
+);
