@@ -85,7 +85,8 @@ function verificapalindromo2(string) {
   return true;
 }
 
-//array pares
+//Substituir números pares
+
 function substituiPares(array) {
   if (!array) {
     return `${-1} - Você não passou o parâmetro!`;
@@ -108,3 +109,10 @@ let lista = [1, 3, 4, 6, 80, 33, 23, 90];
 console.log(verificapalindromo("ama"));
 console.log(verificapalindromo2("abba"));
 console.log(substituiPares(lista));
+
+function confereTamanho(...args) {
+  console.log(
+    `A função confereTamanho recebeu como argumentos um array com ${args.length} elementos`
+  );
+}
+confereTamanho(1, 2);
