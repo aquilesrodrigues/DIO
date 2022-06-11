@@ -206,9 +206,43 @@ Object.values(obj); // retorna os valores
 ```
 
 ### palíndromo
+
 Frase ou palavra que se pode ler, indiferentemente, da esquerda para a direita ou vice-versa
 "ROMA ME TEM AMOR"
 
-
 ### Substituir números pares
 
+### Funções
+
+Spread: uma forma de lidar separadamente com elementos:
+const numbers = [1, 2, 3];
+...numbers
+
+Rest: combina os argumentos em um array
+O Elemento que era independente se torna parte de um array
+
+functin confereTamanho(...args) {
+console.log(args.length); // Exibe um array com 2 elementos.
+}
+confereTamanho(1, 2);
+
+Objetos:
+Object Destructuring - Entre chaves {}, podemos filtrar apenas os dados que nos interessam em um objeto.
+
+const usuario = {
+id: 42,
+fullName: {firstName: 'John', lastname: 'Doe'}
+};
+
+function userId({id}) {
+// Desistrutura o Objeto USUARIO em busca da chave "id" e recebe o seu valor
+return id;
+};
+
+function getFullName( {fullName: {firstName: first, lastName: last} } ) {
+// Aqui desistruturação do Objeto vai até a chave fullName e em seu valor que é outro array
+// que contem as chaves firstName e lastName: atribui seu valor a um parametro da função com o nome de "first" e "last"
+
+    return `${first}  ${last}`
+
+}
