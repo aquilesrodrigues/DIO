@@ -119,15 +119,61 @@ console.log("********* END **********\n");
 
 console.log("## FUNÇÕES ##\n");
 
+console.log("### Autoinvocável (IIFE) ###\n");
+
+console.log("#### (IIFE) - Exemplo 1... :  ####\n");
+
+(function () {
+  let name = "Retorno da função autoinvocável \n";
+  return console.log(name);
+})();
+
+console.log("#### (IIFE) - Exemplo 2... :  ####\n");
+
+let a = 1;
+let b = 2;
+
+const somaAuto = (function (val1, val2) {
+  return val1 + val2;
+})(a, b);
+
+console.log(
+  `-- Função autoinvocável -- \n Atribuída a constante "somaAuto" que retorna valor - ${somaAuto}`
+);
+
+console.log("********* END **********\n");
+
+console.log("### Callbacks ... :  ##\n");
+
+console.log("#### Exemplo callbacks 1... :  ####\n");
+
+const calc = function (num1, num2, outraFuncao) {
+  return outraFuncao(num1, num2);
+};
+
+const soma2 = function (num1, num2) {
+  return num1 + num2;
+};
+
+const subtrai = function (num1, num2) {
+  return num1 - num2;
+};
+
+const resultSoma = calc(1, 2, soma2);
+console.log(
+  `Constant resultaSoma, recebe função anônima \n calc que precisa de 3 parâmetros 2 valores + função que precisa de 2 parâmentros e retornou - ${resultSoma} \n`
+);
+
+console.log("********* END **********\n");
 console.log("### Spread ... : técnica de lidar separadamente com elementos##");
 
-function soma(x, y, z) {
+function somar(x, y, z) {
   return x + y + z;
 }
 
 const numeros = [1, 4, 8];
 console.log(
-  `Estamos utilizando um array de 3 números e com a técnica Spread ... passamos cada valor separadamente para a função soma(...numeros) ${soma(
+  `Estamos utilizando um array de 3 números e com a técnica Spread ... passamos cada valor separadamente para a função somar(...numeros) ${somar(
     ...numeros
   )}`
 );
@@ -274,10 +320,12 @@ console.log(alguem.fullName());
 
 console.log("********* END **********\n");
 
-console.log("### Método Call/This : método utilizado para acessar o **this**. ###\n");
+console.log(
+  "### Método Call/This : método utilizado para acessar o **this**. ###\n"
+);
 
 const aluno = {
-  firstName: "Aquiles",
+  firstName: "Artemes",
   lastName: "Rodrigues",
   job: "aluno",
 };
@@ -287,5 +335,8 @@ const professor = {
   job: "Professor",
 };
 
-function
-console.log(alguem.fullName());
+function navCall() {
+  console.log(this.firstName);
+}
+
+console.log(navCall.call(alguem));
