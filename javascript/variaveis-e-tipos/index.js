@@ -72,7 +72,7 @@ console.log("### Palíndromo ==========================");
   */
 
 function verificapalindromo(string) {
-  if (!string) return "string inexistente";
+  if (!string) throw "string inexistente";
 
   return string.split("").reverse().join("") === string;
 }
@@ -340,3 +340,127 @@ function navCall() {
 }
 
 console.log(navCall.call(alguem));
+
+console.log("********* END **********\n");
+
+console.log("### arrow functions ###\n");
+
+const arrowFunct = () => {
+  return "Sem palavra reservada 'function'";
+};
+console.log(arrowFunct());
+
+const arrowFunct1 = () => "Sem function e chaves";
+
+console.log(arrowFunct1());
+
+const soma = (a) => a;
+
+console.log(soma("Sem function, chaves e parênteses"));
+
+console.log("********* END **********\n");
+
+console.log("### 11 Atividade prática ###\n");
+
+const ano1 = [
+  { nome: "João", fase: 1, nota: 5, turma: "1B" },
+  { nome: "Sofia", fase: 1, nota: 9, turma: "1B" },
+  { nome: "Paulo", fase: 1, nota: 6, turma: "1C" },
+  { nome: "João", fase: 2, nota: 5, turma: "1B" },
+  { nome: "Sofia", fase: 2, nota: 9, turma: "1B" },
+  { nome: "Paulo", fase: 2, nota: 6, turma: "1C" },
+  { nome: "João", fase: 3, nota: 5, turma: "1B" },
+  { nome: "Sofia", fase: 3, nota: 9, turma: "1B" },
+  { nome: "Paulo", fase: 3, nota: 6, turma: "1C" },
+  { nome: "João", fase: 4, nota: 5, turma: "1B" },
+  { nome: "Sofia", fase: 4, nota: 9, turma: "1B" },
+  { nome: "Paulo", fase: 4, nota: 6, turma: "1C" },
+];
+
+var ano2 = [
+  { nome: "Sofia", fase: 1, nota: 5, turma: "1B" },
+  { nome: "Aquiles", fase: 1, nota: 6, turma: "1C" },
+  { nome: "João", fase: 2, nota: 5, turma: "1B" },
+  { nome: "Sofia", fase: 2, nota: 9, turma: "1B" },
+  { nome: "Aquiles", fase: 2, nota: 6, turma: "1C" },
+  { nome: "João", fase: 3, nota: 5, turma: "1B" },
+  { nome: "Sofia", fase: 3, nota: 9, turma: "1B" },
+  { nome: "Aquiles", fase: 3, nota: 6, turma: "1C" },
+  { nome: "João", fase: 4, nota: 5, turma: "1B" },
+  { nome: "Sofia", fase: 4, nota: 9, turma: "1B" },
+  { nome: "Aquiles", fase: 4, nota: 6, turma: "1C" },
+  { nome: "João", fase: 4, nota: 5, turma: "1B" },
+];
+
+ano2.sort(function (a, b) {
+  if (a.nome > b.nome) {
+    return 1;
+  }
+  if (a.nome < b.nome) {
+    return -1;
+  }
+  return 0;
+});
+
+console.log(ano2);
+/*
+  for (let i = 0; i < arrAlunos.length; i++) {
+      if (arr[i].nota === 2) {
+      console.log("xcxx");
+    }
+  }
+}
+
+var entrada;
+try {
+  if (entrada === undefined) {
+    console.log("Variável entrada existe, porém foi declarada sem valor!");
+  }
+  if (saida === undefined) {
+    console.log("Variável saida existe, porém foi declarada sem valor!");
+  }
+} catch (erro) {
+  console.log(`A variável ${erro.message} (Não declarada)`);
+}
+
+console.log("********* END **********\n");
+
+console.log("### 11 Atividade prática ###\n");
+
+let nomesPro = ["Aquiles", "Maria", "João", "sofia"];
+
+function mostrarProps(obj, nomeObjeto) {
+  var resultado = "";
+  for (var i in obj) {
+    if (obj.hasOwnProperty(i)) {
+      resultado += nomeObjeto + "." + i + " = " + obj[i] + "\n";
+    }
+  }
+  return console.log(resultado);
+}
+mostrarProps(alunoObj, "alunoObj");
+
+function alunoObj(nomePropriedade) {
+  for (i = 0; i != nomePropriedade.length; i++) {
+    this.nomePropriedade = 0;
+  }
+}
+var alunoObj = new Object();
+let nomePropriedade = "Aquiles";
+alunoObj[nomePropriedade] = 0;
+nomePropriedade = "Maria";
+alunoObj[nomePropriedade] = 0;
+
+*/
+
+var entrada;
+try {
+  if (entrada === undefined) {
+    console.log("Variável entrada existe, porém foi declarada sem valor!");
+  }
+  if (saida === undefined) {
+    console.log("Variável saida existe, porém foi declarada sem valor!");
+  }
+} catch (erro) {
+  console.log(`A variável ${erro.message} (Não declarada)`);
+}

@@ -12,6 +12,23 @@ Palavras reservadas - Var e let </br>
 **var** --> scope is global
 **let** --> scope is inside the if-block
 
+Uma variável declarada usando a declaração **var** ou **let** sem valor inicial tem como valor undefined.
+Se tentarmos acessar uma variável não declarada será lançada uma exceção _"ReferenceError"_.
+
+```javascript
+var entrada;
+try {
+  if (entrada === undefined) {
+    console.log("Variável entrada existe, porém foi declarada sem valor!");
+  }
+  if (saida === undefined) {
+    console.log("Variável saida existe, porém foi declarada sem valor!");
+  }
+} catch (erro) {
+  console.log(`A variável ${erro.message} (Não declarada)`);
+}
+```
+
 **Redeclaração** --> var a = 11; :left_speech_bubble: Você informa o tipo, o nome e o valor </br>
 **Reatribuição** --> a = 11; :left_speech_bubble: Você só informa o nome e valor
 
@@ -39,10 +56,12 @@ let numberOne;
 
 > :vertical_traffic_light: Redeclaração e Reatribuição
 
+Escopo - É o contexto atual de execução, em que valores e expressões são "visíveis" ou podem ser referenciadas.
+
 ```javascript
-var firstName = "João"; // Variável Global
-var lastName = "Souza"; // Variável Global
-let alias = "Joaozinho"; // Variável de bloco
+var firstName = "João"; // Variável escopo Global
+var lastName = "Souza"; // Variável escopo Global
+let alias = "Joaozinho"; // Variável escopo de bloco
 
 if (firstName == "João") {
   var firstName = "Pedro"; // Redeclaração da Variável
@@ -85,8 +104,6 @@ Os dados em Javascript são divididos em 2 grandes grupos: **Primitivos** e os *
 
 Não possuem métodos imbutidos, são escritos em letras minúsculas.
 
-Existem funções que criam objetos do tipo primitivos.
-
 #### strings
 
 Em sua declaração podemos utilizar, aspas "" / '' ou crases com interpolação **templates strings** `${}`.
@@ -106,7 +123,7 @@ nome.length() // retorna o tamanho de caracteres (total = 4)
 nome.concat(sobrenome) // concatena com outro dado
 nome.split("") // retorna uma lista de cada elemento da string separado pelos delimitadores informados.
 nome.includes("P") // retorna false por não encontrar o P
-nome.startsWith("J") // retorna true se a string começa com O
+nome.startsWith("J") // retorna true se a string começa com J
 nome.endsWith("?") // retorna true caso string finalize com ?
 nome.replace("ã", "a") // retorna outra string com substituição
 ```
@@ -162,8 +179,6 @@ O valor null é um literal, e não uma propriedade do objeto global (como o unde
 
 ### Composite / Non-Primitive
 
-### Array
-
 ```javascript
 let array = [];
 array.push(3); // insere elemento na posição 0
@@ -177,12 +192,16 @@ array.some((item) => item === 5); //verifica se algum é igual a 5
 
 ### Objetos
 
-São declarado com chaves {} e é composto por chave:valor
+Um objeto é uma entidade com coleção de propriedades, e uma propriedade é uma associação entre um nome (ou chave) e um valor. Um valor de propriedade pode ser uma função, que é então considerada um método do objeto. Você pode definir seus próprios objetos.
+
+As propriedades são declaradas entre chaves {} e é composto por chave:valor.
+Um objeto tem propriedades associadas a ele e você acessas essas propriedades com uma simples notação de ponto:
+nomeObjeto.nomePropriedade
 
 ```javascript
 let obj = {};
 /* Definindo elementos para o objeto: */
-obj.name = "julia"; // a palavra após Um . define o nome da chave e o que está entre " " é o valor que está sendo atribuído
+obj.name = "julia"; // a palavra após Um . define o nome da propriedade e o que está entre " " é o valor que está sendo atribuído a propriedade name.
 obj["age"] = 20; // também é uma definição para chave e valor
 
 let recebi = "dinheiro"; // criada variável recebi e atribui valor
@@ -205,6 +224,10 @@ Object.keys(obj); // retorna as chaves
 Object.values(obj); // retorna os valores
 ```
 
+### Array
+
+O objeto Array do JavaScript é um objeto global usado na construção de 'arrays': objetos de alto nível semelhantes a listas.
+
 ### palíndromo
 
 Frase ou palavra que se pode ler, indiferentemente, da esquerda para a direita ou vice-versa
@@ -215,6 +238,9 @@ Frase ou palavra que se pode ler, indiferentemente, da esquerda para a direita o
 function substituiPares()
 
 ### Funções
+
+Em JavaScript uma function serve para definir procedimentos dentro de um bloco.
+Ela cria um escopo, de modo que (por exemplo) uma variável definida exclusivamente dentro da função não pode ser acessada de fora desta função.
 
 Spread: uma forma de lidar separadamente com elementos:
 const numbers = [1, 2, 3];
@@ -263,3 +289,54 @@ No exemplo, _this_ refere-se ao objeto pai.
 Em um objeto temos alguns métodos que podem ser utilizados para lidar com o **this**.
 
 O primeiro que vamos analisar é o **call**.
+
+## arrow functions
+
+Representada por "=>". Sua presença indica que esta função anônima está na forma reduzida.
+
+```javascript
+const helloWorld = () => {
+  return "Hello World";
+};
+```
+
+Em sua declaração não inserimos a palavra reservada "function" e se tiver todo o código em apenas uma linha, podemos dispensar as " {} " e a palavra reservada "return"
+
+```javascript
+const helloWorld1 = () => "hello World";
+```
+
+E caso você recebe apenas um parâmetro, então também podemos dispensar os parenteses
+
+```javascript
+const soma = (a) => a;
+```
+
+A arrow functions não faz hoisting!
+
+"this" sempre será o objeto gloal. Métodos para modificar seu valor não irão funcionar;
+
+Não existe o objeto "arguments";
+O construtor (ex. new MeuObjeto()) também não pode ser utilizado
+
+```javascript
+console.log();
+```
+
+ECMAScript Error
+Erros que ocorrem em tempo de execução
+Composto por: Mensage, Nome, Linha, Call Stack
+
+DOMException
+Document Object Model
+Relacionado a erros com javascript e uma página web.
+Composto por:
+e
+ConsoleOnDev
+errorOnDev
+Document
+...
+
+referente a sua estrutura dentro de uma página web
+
+O objeto Erro
