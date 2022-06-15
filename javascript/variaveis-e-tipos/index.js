@@ -464,3 +464,42 @@ try {
 } catch (erro) {
   console.log(`A variável ${erro.message} (Não declarada)`);
 }
+
+console.log("\n ********* END **********\n");
+
+console.log("### 12 Atividade prática ###\n");
+
+function validaArray(arr, tamanho) {
+  try {
+    if (!arr && !tamanho)
+      throw new ReferenceError("throw - Envie os parâmentros");
+
+    if (typeof arr !== "object")
+      throw new TypeError("throw - Array precisa ser do tipo object");
+
+    if (typeof tamanho !== "number")
+      throw new TypeError("throw - Array precisa ser do tipo number");
+
+    if (arr.length !== tamanho)
+      throw new RangeError(
+        "throw - Objeto com tamanho diferente do segundo parâmentro!"
+      );
+
+    return arr;
+  } catch (e) {
+    if (e instanceof ReferenceError) {
+      console.log("catch - Este erro é um ReferenceError!");
+      console.log(e.message);
+    } else if (e instanceof TypeError) {
+      console.log("catch - Este erro é um TypeError!");
+      console.log(e.message);
+    } else if (e instanceof RangeError) {
+      console.log("catch - Este erro é um RangeError!");
+      console.log(e.message);
+    } else {
+      console.log("catch - Tipo de erro não esperado:" + e);
+    }
+  }
+}
+
+console.log(validaArray([1, 2], 2));
