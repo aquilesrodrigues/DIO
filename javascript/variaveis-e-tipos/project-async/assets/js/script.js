@@ -1,22 +1,22 @@
-const BASE_URL = "https://thatcopy.pw/catapi/rest/";
-const btn = document.getElementById("change-cat");
+const BASE_URL = "https://dog.ceo/api/breeds/image/random";
+const btn = document.getElementById("change-animal");
 
-const getCats = async () => {
+const getAnimal = async () => {
   try {
     const data = await fetch(BASE_URL);
     const json = await data.json();
 
-    return json.webpurl;
+    return json.message;
   } catch (error) {
     console.log(error.message);
   }
 };
 
 const loadImg = async () => {
-  const img = document.getElementById("cat");
-  img.src = await getCats();
+  const img = document.getElementsByTagName("img")[0];
+  img.src = await getAnimal();
 };
 
 loadImg();
 
-Btn.addEventListener("click", loadImg);
+btn.addEventListener("click", loadImg);

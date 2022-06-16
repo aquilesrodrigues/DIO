@@ -339,19 +339,20 @@ Document
 
 referente a sua estrutura dentro de uma página web
 
-O objeto Erro
+## O objeto Erro
 
-Javascript roda de maneira síncrona.
+## Javascript Assíncrono
+
+O Javascript roda de maneira síncrona, Mas, quando lidamos com comunicação com APIs precisamos do uso do objeto de processamento assíncrono o Promisse.
 
 Assíncrono - Que não ocorre ou não se efetiva ao mesmo tempo.
 
-Promisse - Objeto de processamento assíncrono
-
-Inicialmente, seu valor é desconhecido. Ela pode, então, ser resolvida ou rejeita.
+Uma promises pode ter 4 estados
 
 Pending - Pendente
 Fulfilled - completado
-Rejected - Re
+Rejected - Rejeitado
+Resolved - Resolvido
 
 ```notepad
                  RESOLVED
@@ -360,6 +361,3 @@ Promisse ---                   ----- Promisse
             \  [ .catch() ]   /
                  REJECTED
 ```
-
-Palavras chaves usada com o promisse:
-Async, await.
