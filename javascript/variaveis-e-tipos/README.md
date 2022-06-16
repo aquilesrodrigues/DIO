@@ -361,3 +361,28 @@ Promisse ---                   ----- Promisse
             \  [ .catch() ]   /
                  REJECTED
 ```
+
+## Orientação a Objetos
+
+Paradigma:
+
+IMperativo - foco em como resolver problemas (Procedural, Objeto, Paralelo)
+Declarativo - O que irá ser feito (lógica, Funcionalidade, Banco)
+
+Os programas são "objetos" que possuem uma série de propriedades.
+
+Seus Pilares: (Herança / Polimorfismo / Encapsulamento / Abstração)
+
+Abstração - "Processo mental que consiste em isolar um aspecto determinado de um estado de coisas relativamente complexo, a fim de simplificar a sua avaliação, classificação ou para permitir a comunicação do mesmo.
+
+Herança - O objeto filho herda propriedades e métodos do objeto pai.
+
+Encapsulamento - Cada classe possui propriedades e métodos independente do restante do código.
+
+Polimorfismo - Objetos podem herdar a mesma classe pai, mas se comportam de forma diferente quando invocamos seus métodos
+
+Protótipos
+
+Todos os objetos Javascript herdam propriedades e métodos de um prototype. O object.prototype está no topo desta cadeia.
+
+O Javascript não possui classes nativamente. **Syntatic sugar** - uma sintaxe feita para facilitar a escrita dos objetos e a herança se dá por protótipos.
