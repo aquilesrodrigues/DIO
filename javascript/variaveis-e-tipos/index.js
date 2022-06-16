@@ -503,3 +503,14 @@ function validaArray(arr, tamanho) {
 }
 
 console.log(validaArray([1, 2], 2));
+
+const myPromisse = new Primise((resolve, reject) => {
+  window.setTimeout(() => {
+    resolve("Resolvida");
+  }, 2000);
+});
+
+await myPromisse
+  .then((result) => result + " passando pelo then")
+  .then((result) => result + " e agora acabou!")
+  .catch((err) => console.log(err.message));

@@ -340,3 +340,26 @@ Document
 referente a sua estrutura dentro de uma página web
 
 O objeto Erro
+
+Javascript roda de maneira síncrona.
+
+Assíncrono - Que não ocorre ou não se efetiva ao mesmo tempo.
+
+Promisse - Objeto de processamento assíncrono
+
+Inicialmente, seu valor é desconhecido. Ela pode, então, ser resolvida ou rejeita.
+
+Pending - Pendente
+Fulfilled - completado
+Rejected - Re
+
+```notepad
+                 RESOLVED
+PENDING     /  [ .then()  ]   \      PENDING
+Promisse ---                   ----- Promisse
+            \  [ .catch() ]   /
+                 REJECTED
+```
+
+Palavras chaves usada com o promisse:
+Async, await.
