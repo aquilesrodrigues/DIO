@@ -242,13 +242,6 @@ function substituiPares()
 Em JavaScript uma function serve para definir procedimentos dentro de um bloco.
 Ela cria um escopo, de modo que (por exemplo) uma variável definida exclusivamente dentro da função não pode ser acessada de fora desta função.
 
-Spread: uma forma de lidar separadamente com elementos:
-const numbers = [1, 2, 3];
-...numbers
-
-Rest: combina os argumentos em um array
-O Elemento que era independente se torna parte de um array
-
 ```javascript
 function confereTamanho(...args) {
   console.log(
@@ -258,7 +251,24 @@ function confereTamanho(...args) {
 confereTamanho(1, 2);
 ```
 
-Objetos:
+Pode-se passar uma função como argumento de outra, para ela ser executada no futuro. A esta função que é argumento de outra, dá-se o nome de **callback**, que é a declaração de uma **Promise**.
+
+```javascript
+const minhaFunc = function () {
+  return "olá mundo";
+};
+```
+
+Hoje existe um padrão de uso de um callback único, que informa um erro no primeiro argumento e os argumentos de sucesso em sequência como **callback(erro, dados)**.
+
+**Spread**: uma forma de lidar separadamente com elementos:
+const numbers = [1, 2, 3];
+...numbers
+
+**Rest**: combina os argumentos em um array
+O Elemento que era independente se torna parte de um array
+
+**Objetos**:
 Object Destructuring - Entre chaves {}, podemos filtrar apenas os dados que nos interessam em um objeto.
 
 ```javascript
@@ -283,6 +293,7 @@ function getFullName({ fullName: { firstName: first, lastName: last } }) {
 ## This
 
 Quando uma função está dentro de um objeto nós a chamamos de método!!!
+
 A palavra reservada **this** é uma referência de contexto.
 No exemplo, _this_ refere-se ao objeto pai.
 
@@ -343,30 +354,50 @@ referente a sua estrutura dentro de uma página web
 
 ## Javascript Assíncrono
 
-O Javascript roda de maneira síncrona, Mas, quando lidamos com comunicação com APIs precisamos do uso do objeto de processamento assíncrono o Promisse.
+O Javascript roda de maneira síncrona, mas, quando lidamos com comunicação com APIs precisamos do uso do objeto de processamento assíncrono o **Promises** (que é um código a ser executado esperando alguma resposta).
 
-Assíncrono - Que não ocorre ou não se efetiva ao mesmo tempo.
+O recurso Fetch API, serve para realizar requisições assíncronas.
 
 Uma promises pode ter 4 estados
 
-Pending - Pendente
+Pending - é o estado inicial - Pendente
+Rejected - promise que falhou
+Resolved - promise concluída com sucesso
+
 Fulfilled - completado
-Rejected - Rejeitado
-Resolved - Resolvido
 
 ```notepad
                  RESOLVED
 PENDING     /  [ .then()  ]   \      PENDING
-Promisse ---                   ----- Promisse
+Promisse ---                   ----- Promise
             \  [ .catch() ]   /
                  REJECTED
+```
+
+Se conseguirmos obter as informações do servidor, a Promise será resolvida (em inglês, resolved) com sucesso. Se não obtivermos as informações, no entanto, a Promise estará em estado rejected (em português, rejeitada).
+
+Além disso, se houver diversas solicitações, após a primeira Promise ser resolvida (ou rejeitada), um novo processo iniciará no qual podemos associá-las diretamente usando um método chamado encadeamento.
+
+# Async/Await
+
+**async** é um açúcar sintático para declarar uma função assíncrona que retorna uma promise implicitamente.
+
+**await** é um açúcar sintático para esperar o resultado de uma promise. Em caso de rejeição, um erro é lançado e será necessário usar o bloco _try/catch_.
+
+```javascript
+try {
+  const promessaDeAlgoDoBanco = promisify(retornaAlgoDoBanco);
+  const resultado = await promessaDeAlgoDoBanco({ id: 1 }, true);
+} catch (err) {
+  console.log("erro de acesso ao banco", err);
+}
 ```
 
 ## Orientação a Objetos
 
 Paradigma:
 
-IMperativo - foco em como resolver problemas (Procedural, Objeto, Paralelo)
+Imperativo - foco em como resolver problemas (Procedural, Objeto, Paralelo)
 Declarativo - O que irá ser feito (lógica, Funcionalidade, Banco)
 
 Os programas são "objetos" que possuem uma série de propriedades.
@@ -386,3 +417,5 @@ Protótipos
 Todos os objetos Javascript herdam propriedades e métodos de um prototype. O object.prototype está no topo desta cadeia.
 
 O Javascript não possui classes nativamente. **Syntatic sugar** - uma sintaxe feita para facilitar a escrita dos objetos e a herança se dá por protótipos.
+
+9962
