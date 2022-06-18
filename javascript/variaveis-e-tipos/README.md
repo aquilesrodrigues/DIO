@@ -356,7 +356,18 @@ referente a sua estrutura dentro de uma página web
 
 O Javascript roda de maneira síncrona, mas, quando lidamos com comunicação com APIs precisamos do uso do objeto de processamento assíncrono o **Promises** (que é um código a ser executado esperando alguma resposta).
 
-O recurso Fetch API, serve para realizar requisições assíncronas.
+API - é uma forma de intermediar os resultados do back-end com o que é apresentado no front-end, através do acesso por meio do html.
+Comumente as APIs retornarem seus dados no formato **JSON**, sendo assim precisamos tratá-los quando recebidos.
+
+O recurso Fetch retorna um promise. que realiza requisições assíncronas.
+
+```javascript
+fetch(url, options)
+  .then((response) => response.json())
+  .then((json) => console.log(json));
+```
+
+Desta maneira podemos fazer operações no BANCO( GET, PUT, DELETE, POST)
 
 Uma promises pode ter 4 estados
 
@@ -378,7 +389,7 @@ Se conseguirmos obter as informações do servidor, a Promise será resolvida (e
 
 Além disso, se houver diversas solicitações, após a primeira Promise ser resolvida (ou rejeitada), um novo processo iniciará no qual podemos associá-las diretamente usando um método chamado encadeamento.
 
-# Async/Await
+## Async/Await
 
 **async** é um açúcar sintático para declarar uma função assíncrona que retorna uma promise implicitamente.
 
