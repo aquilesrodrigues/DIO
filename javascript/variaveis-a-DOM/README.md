@@ -428,5 +428,3 @@ Protótipos
 Todos os objetos Javascript herdam propriedades e métodos de um prototype. O object.prototype está no topo desta cadeia.
 
 O Javascript não possui classes nativamente. **Syntatic sugar** - uma sintaxe feita para facilitar a escrita dos objetos e a herança se dá por protótipos.
-
-9962
