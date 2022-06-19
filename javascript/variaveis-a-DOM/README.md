@@ -522,3 +522,46 @@ Resultado final da modificação da tag **div** com id('**imagem**'):
   <! resto do código aqui -->
 </div>
 ```
+
+Assessando diretamente o CSS de um elemento
+
+```javascript
+document.getElementsByTagName("p").style.color = "blue";
+```
+
+## Eventos na página
+
+**Eventos do mouse** - mouseover, mouseout
+**Eventos de clique** - click, dbclick
+**Eventos de atualização** - change, load
+
+## Acionando Eventos
+
+### Event listener
+
+Diretamente no Javascript, cria um evento que vai ser acionado no momento em que o usuário realizar determinada ação.
+
+```javascript
+const botao = document.getElementById("meuBotao");
+botao.addEventListener("click", outraFuncao);
+```
+
+### Atributo HTML
+
+Especifica a função a ser chamada diretamente no elemento HTML.
+
+```html
+<html>
+<body>
+  <!-- Lembrando que no HTML inserimos "on" antes do evento:
+    on + click => onclick
+  -->
+  <h1 onclick="mudaTexto(this)">Click aqui!</h1>
+  <script>
+    function mudaTexto(id) {
+      id.innerHTML = "Mudei!";
+    }
+  <script>
+</body>
+</html>
+```
