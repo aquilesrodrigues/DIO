@@ -406,25 +406,119 @@ try {
 
 ## Orientação a Objetos
 
-Paradigma:
+### Paradigma:
 
-Imperativo - foco em como resolver problemas (Procedural, Objeto, Paralelo)
-Declarativo - O que irá ser feito (lógica, Funcionalidade, Banco)
+**Imperativo** - foco em como resolver problemas (Procedural, Objeto, Paralelo)
+**Declarativo** - O que irá ser feito (lógica, Funcionalidade, Banco)
 
 Os programas são "objetos" que possuem uma série de propriedades.
 
-Seus Pilares: (Herança / Polimorfismo / Encapsulamento / Abstração)
+### Seus Pilares:
 
-Abstração - "Processo mental que consiste em isolar um aspecto determinado de um estado de coisas relativamente complexo, a fim de simplificar a sua avaliação, classificação ou para permitir a comunicação do mesmo.
+(Herança / Polimorfismo / Encapsulamento / Abstração)
 
-Herança - O objeto filho herda propriedades e métodos do objeto pai.
+**Abstração** - "Processo mental que consiste em isolar um aspecto determinado de um estado de coisas relativamente complexo, a fim de simplificar a sua avaliação, classificação ou para permitir a comunicação do mesmo.
 
-Encapsulamento - Cada classe possui propriedades e métodos independente do restante do código.
+**Herança** - O objeto filho herda propriedades e métodos do objeto pai.
 
-Polimorfismo - Objetos podem herdar a mesma classe pai, mas se comportam de forma diferente quando invocamos seus métodos
+**Encapsulamento** - Cada classe possui propriedades e métodos independente do restante do código.
 
-Protótipos
+**Polimorfismo** - Objetos podem herdar a mesma classe pai, mas se comportam de forma diferente quando invocamos seus métodos
 
-Todos os objetos Javascript herdam propriedades e métodos de um prototype. O object.prototype está no topo desta cadeia.
+### Protótipos
 
-O Javascript não possui classes nativamente. **Syntatic sugar** - uma sintaxe feita para facilitar a escrita dos objetos e a herança se dá por protótipos.
+Todos os objetos Javascript herdam propriedades e métodos de um **prototype**. O _object.prototype_ está no topo desta cadeia.
+
+O Javascript não possui classes nativamente. Por isso, a **Syntatic sugar** é uma sintaxe feita para facilitar a escrita dos objetos e a herança se dá por protótipos.
+
+## Manipulando D.O.M.
+
+D.O.M.(Document Object Model) é um padrão de como **acessar e modificar os elementos HTML de uma página**.
+
+Os nevegadores possuem o DOM
+
+```txt
+        _________________
+        |   Document    |
+        -----------------
+                |
+        ________|________
+        | Root element  |
+        |    <html>     |
+        -----------------
+    ___________|____________
+____|_____           _______|_____
+|Element:|           | Element:  |
+| <head> |           |  <body>   |
+----------           -------------
+```
+
+B.O.M.(Browser Object Model) Arvore de dependência onde está o objeto Window que é janela mãe do browser que possui as dependências: **Document Object Model** como o **history, location, screen** e **navigator**
+
+### Estrutura da página HTML
+
+tag -
+id(#) - não pode ter mais de um com o mesmo id. É representado com o sharp antes do id. (**.id-nome**)
+classe(.) - Utilizamos o ponto . para representá-la. (**.classe-nome**)
+
+Retorna **o nó** com o **id** de nome _titulo_ encontrado dentro do seu html
+
+```javascript
+document.getElementById("titulo");
+```
+
+Retorna **array de nós** com a **tag** de nome _li_ encontrados dentro do seu html
+
+```javascript
+document.getElementsByTagName("li");
+```
+
+Retorna **array de nós** com a **Class** de nome _texto_ encontradas dentro do seu html
+
+```javascript
+document.getElementsByClassName("texto");
+```
+
+Para selecionarmos os elementos de uma página que possuam mais de uma classe ou id, como também classe e id entre outros.
+
+```javascript
+document.querySelectorAll(".class-name1 .class-name2");
+```
+
+```javascript
+document.createElement(element); // Cria um novo elemento HTML
+document.removeChild(element); // Remove um elemento
+document.appendChild(element); // Adiciona um novo elemento
+document.replaceChild(new, old); // Substitui um elemento
+```
+
+Exemplo de uma div com id('imagem'):
+
+```html
+<div id="imagem" class="classe">
+  <! resto do código aqui -->
+</div>
+```
+
+Usaremos o Element.classList para manipular esta tag div
+
+```Javascript
+const oMeuElemento = document.getElementById("imagem");
+
+oMeuElemento.classList.add("novo-estilo");
+// Adiciona a classe "novo-estilo"
+
+oMeuElemento.classList.remove("classe");
+// Remove a classe "classe" que se encontra no html acima
+
+oMeuElemento.classList.toggle("dark-mode");
+// Adiciona a classe "dark-mode" caso ela não exista, caso contrário a removerá da lista de classes existente neste elemento 'id'
+```
+
+Resultado final da modificação da tag **div** com id('**imagem**'):
+
+```html
+<div id="imagem" class="novo-estilo dark-mode">
+  <! resto do código aqui -->
+</div>
+```
