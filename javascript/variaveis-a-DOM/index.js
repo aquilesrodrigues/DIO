@@ -1,123 +1,138 @@
-/* numberOne = 1;
-console.log(numberOne + 2);
+/*  ***********************************************
+    TIPOS DE VARIÁVEIS
+    ***********************************************
+*/
+console.log("\n### TIPOS DE VARIÁVEIS ========================");
 
-var numberOne; */
-
-/* Exemplo 2 */
-
-/* var firstName = "João"; // Variável Global
+var firstName = "João"; // Variável Global
 var lastName = "Souza"; // Variável Global
-let alias = "Joaozinho"; // Variável de bloco
+let alias = "Joaozinho"; // Variável de bloco do arquivo
 
 if (firstName == "João") {
   var firstName = "Pedro"; // Redeclaração da Variável
-  lastName = "Silva"; // Reatribuição da Variável
- */
-/* aqui teremos uma nova variável em outro espaço da memória
-     Não ficará disponível fora do escopo */
-/* let alias = "Pedrinho"; // Variável de bloco
+  lastName = "Silva"; // Reatribuição da Variável "lastName" declarada fora do bloco if
+
+  /* aqui teremos uma nova variável em outro espaço da memória
+     Não ficará disponível fora do escopo do if
+  */
+  let alias = "Pedrinho"; // Variável de bloco
 
   console.log(`Dentro do bloco if: ${firstName} ${lastName} ${alias}`);
 }
-console.log(`Fora do Bloco if: ${firstName} ${lastName} ${alias}`); */
+console.log(`Fora do Bloco if: ${firstName} ${lastName} ${alias}`);
 
-/* Exemplo 3 */
+/*  ***********************************************
+    CONSTANTES
+    ***********************************************
+*/
+console.log("\n### CONSTANTES ========================");
 
-const FIRST_NAME = "Aquiles"; // CONSTANTE declarar com SNAKE_UPPER_CASE
-// e Sua atribuição é obrigatória
+const FIRST_NAME = "Aquiles"; // CONSTANTE sempre declarar com SNAKE_UPPER_CASE
+// e sua atribuição é obrigatória
 
-var LAST_NAME; // Global e não se deve usar com SNAKE_UPPER_CASE
+var last_name; // Global e não se deve usar com SNAKE_UPPER_CASE
 // Uma 'var' pode ser declarada sem atribuição
 
 console.log(FIRST_NAME);
 
-//FIRST_NAME = "Maria"; // Constantes não aceitam reatribuição!!!!
-// Irá ocorrer erro!
+// FIRST_NAME = "Maria"; // Está comentada por não funcionar
+/* Constantes não aceitam reatribuição!!!!
+   Por isso, ocorrerá erro caso tentarmos reatribuí-la
+*/
 
-let validation = 3 === 0;
-console.log(validation); // retorna um boleano 'false'
-console.log(!validation); // retorna um boleano 'true'
+let validation = 3 === 0; // Aqui atribuimos a "validation" uma comparação
+console.log(validation); // retorna um boleano 'false' pq 3 não é igual a 0
+console.log(!validation); // retorna um boleano 'true' pq usamos ! negação do valor
 validation.toString(); // retorna seu valor como string
 
 let obj = {};
+
 /* Definindo elementos para o objeto: */
-obj.name = "julia"; // a palavra após Um . define o nome da chave e o que está entre " " é o valor que está sendo atribuído
-obj["age"] = 20; // também é uma definição para chave e valor
+obj.name = "julia";
+// a palavra após Um . define o nome da chave e o que está entre " " é o valor que está sendo atribuído
+obj["age"] = 20; // também é uma definição para chave(age) e valor(20)
 
-let recebi = "dinheiro"; // criada variável recebi e atribui valor
+let recebi = "dinheiro"; // criada variável recebi e atribui seu valor "dinheiro"
 
-/* Podemos passar para um objeto valores de variáveis como chave e depois atribuir um valor para esta chave */
+/* Podemos passar para um objeto valores de variáveis como chave(recebi) e 
+   depois atribuir um valor(20) para esta chave 
+*/
+obj[recebi] = 20; // Será criada uma chave "dinheiro" com valor 20
 
-obj[recebi] = 20;
-
-/* Desta forma será criada uma chave "dinheiro" e ela receberá valor 20*/
 console.log(obj);
+
 /* Acessando elementos: */
 console.log(obj.name);
 console.log(obj["name"]);
 
-//foo1; // foo não existe, não foi definido e jamais foi inicializado:
+var foo = null; //foo é conhecido e existe, mas não aponta para nenhum tipo ou valor
 
-// "ReferenceError: foo is not defined"
+// Vamos usar o typeof() - método que exibe o tipo do dado
+console.log(typeof foo); // Retornou "null"
 
-var foo = null; // // foo é conhecido e existe, mas não aponta para nenhum tipo ou valor
+console.log("\n ********* END **********\n");
 
-console.log(typeof foo); // "null"
+/*  ***********************************************
+    TRABALHANDO COM LISTAS E "DICIONÁRIO"
+    ***********************************************
+*/
+console.log(
+  "\n### TRABALHANDO COM LISTAS E 'DICIONÁRIO' ========================"
+);
 
-// typeof() - método que exibe o tipo do dado
+let nome = "Aquiles Rodrigues";
+let idade = 31;
+let idade2 = 18;
+let frase = "Reunião do Conselho Esportivo";
 
-console.log("### Palíndromo ==========================");
-/* Frase ou palavra que se pode ler, indiferentemente, da esquerda para a direita ou vice-versa
-  "ROMA ME TEM AMOR"
-  */
+console.log("Hello word! /br");
+//alert(nome + " tem " + (idade + idade2) + " anos");
+console.log(nome + " tem " + (idade + idade2) + " anos");
+console.log(
+  nome.replace("Rodrigues", "Silva") + " tem " + (idade + idade2) + " anos"
+);
+console.log(frase.toLowerCase());
 
-function verificapalindromo(string) {
-  if (!string) throw "string inexistente";
+let listaFrutas = ["Maçã", "Uva", "Laranja"]; // Listas existe
+listaFrutas.push("pêra");
+listaFrutas.pop("maçã");
 
-  return string.split("").reverse().join("") === string;
-}
+console.log("tamanho da lista; ", listaFrutas.length);
+console.log("valor posição 0 da lista: ", listaFrutas[0]);
+console.log("Lista reversa: ", listaFrutas.reverse());
+console.log("lista to string: ", listaFrutas.toString());
+console.log(
+  "lista to string: posição 0 do string: ",
+  listaFrutas.toString()[0]
+);
+console.log(listaFrutas.join(" - "));
 
-function verificapalindromo2(string) {
-  if (!string) return "string inexistente";
+/*
+ Não existe um tipo de 'dicionário' em JavaScript, mas podemos criar pares de chaves - valores usando objetos JavaScript . {}
+*/
 
-  for (let i = 0; i < string.length / 2; i++) {
-    // nesta condição vamos verificar se suas extremidades são iguais
-    if (string[i] !== string[string.length - i - 1]) {
-      //se indice for diferente do outro indice [tamanho - o indice - um]
-      return false;
-    }
-  }
-  return true;
-}
-console.log(verificapalindromo("ama"));
-console.log(verificapalindromo2("abba"));
+let dicionario = {}; // Criado Objeto vazio para receber chave e valor
+dicionario = { nome: "bola", cor: "vermelha" };
+
+let lista_dic = [
+  //Lista com Objetos com chave e valor como um "Dicionário"
+  { nome: "mesa", cor: "laranja" },
+  { nome: "cadeira", cor: "verde" },
+];
+dicionario[forma] = "redonda"; // Criando + uma chave(forma) com valor(redonda)
+dicionario.cor = "Amarela"; // Alterando chave cor(vemelha) para cor(Amarela)
+console.log("Dicionário - indice nome: ", dicionario.nome);
+console.log("Dicionário Lista - indice nome, posição 1: ", lista_dic[1].nome);
+
 console.log("********* END **********\n");
 
-console.log("Substituir números pares ==========");
-function substituiPares(array) {
-  if (!array) {
-    return `${-1} - Você não passou o parâmetro!`;
-  }
-  if (!array.length) {
-    return `${-1} - O Array não possui elementos!`;
-  }
-  for (let i = 0; i < array.length; i++) {
-    if (array[i] === 0) {
-      console.log("Você já é zero");
-    } else if (array[i] % 2 === 0) {
-      console.log(`Substituição na posição ${i} com valor ${array[i]} para 0`);
-      array[i] = 0;
-    }
-  }
-  return array;
-}
+/*  ***********************************************
+    FUNÇÕES
+    ***********************************************
+*/
+console.log("\n### FUNÇÕES ========================");
 
-let lista = [1, 3, 4, 6, 80, 33, 23, 90];
-console.log(substituiPares(lista));
-
-console.log("********* END **********\n");
-
-console.log("## FUNÇÕES ##\n");
+console.log("##  ##\n");
 
 console.log("### Autoinvocável (IIFE) ###\n");
 
@@ -143,7 +158,11 @@ console.log(
 
 console.log("********* END **********\n");
 
-console.log("### Callbacks ... :  ##\n");
+/*  ***********************************************
+    CALLBACK
+    ***********************************************
+*/
+console.log("\n### Callbacks ========================");
 
 console.log("#### Exemplo callbacks 1... :  ####\n");
 
@@ -161,11 +180,18 @@ const subtrai = function (num1, num2) {
 
 const resultSoma = calc(1, 2, soma2);
 console.log(
-  `Constant resultaSoma, recebe função anônima \n calc que precisa de 3 parâmetros 2 valores + função que precisa de 2 parâmentros e retornou - ${resultSoma} \n`
+  `Constant resultaSoma, recebe função anônima \n 
+  calc que precisa de 3 parâmetros 2 valores \N
+  + função que precisa de 2 parâmentros e retornou - ${resultSoma} \n`
 );
 
 console.log("********* END **********\n");
-console.log("### Spread ... : técnica de lidar separadamente com elementos##");
+
+/*  *********************************************************
+    Spread ... :técnica de lidar separadamente com elementos
+    *********************************************************
+*/
+console.log("\n### Callbacks ========================");
 
 function somar(x, y, z) {
   return x + y + z;
@@ -173,25 +199,36 @@ function somar(x, y, z) {
 
 const numeros = [1, 4, 8];
 console.log(
-  `Estamos utilizando um array de 3 números e com a técnica Spread ... passamos cada valor separadamente para a função somar(...numeros) ${somar(
-    ...numeros
-  )}`
+  `Estamos utilizando um array de 3 números e com a técnica Spread 
+  "..." passamos cada valor separadamente para a função somar() 
+  ${somar(...numeros)}`
 );
 
 console.log("********* END **********\n");
 
-console.log("### Rest: combina os argumentos em um array ###");
+/*  *********************************************************
+    Rest: técnica de lidar separadamente com elementos
+    *********************************************************
+*/
+console.log("\n### Rest ========================");
+
+console.log("### Rest ...args : combina os argumentos no array ###");
 
 function confereTamanho(...args) {
   console.log(
-    `A função confereTamanho recebeu como argumentos um array com ${args.length} elementos`
+    `A função confereTamanho recebeu como argumentos um array com 
+    ${args.length} elementos`
   );
 }
 confereTamanho(1, 2);
 
 console.log("********* END **********\n");
 
-console.log("### if/else: Condicional ###\n");
+/*  *********************************************************
+    if/else: Condicional
+    *********************************************************
+*/
+console.log("\n### if/else: Condicional ========================");
 
 function numeroPositivo(num) {
   const ehNegativo = num < 0;
@@ -208,7 +245,11 @@ console.log(numeroPositivo(2));
 
 console.log("********* END **********\n");
 
-console.log("### Switch/case: Condicional ###\n");
+/*  *********************************************************
+    Switch/case: Condicional
+    *********************************************************
+*/
+console.log("\n### Switch/case: Condicional ========================");
 
 function getAnimal(id) {
   switch (id) {
@@ -231,7 +272,11 @@ console.log(
 
 console.log("********* END **********\n");
 
-console.log("### For: Loop ###\n");
+/*  *********************************************************
+    For: Laços
+    *********************************************************
+*/
+console.log("\n### For: Loop ========================");
 
 function multiplicaPorDois(arr) {
   let multiplicar = [];
@@ -247,7 +292,13 @@ console.log(multiplicaPorDois(meusNumeros));
 
 console.log("********* END **********\n");
 
-console.log("### For...in : Percorre entre propriedades do Objeto###\n");
+/*  *********************************************************
+    For...in : Percorre entre propriedades do Objeto
+    *********************************************************
+*/
+console.log("\n### For...in : Percorre entre propriedades do Objeto ====");
+
+console.log("### ###\n");
 
 function usaPropObj(objeto) {
   for (proprio in objeto) {
@@ -264,7 +315,11 @@ console.log(usaPropObj(meuObjeto));
 
 console.log("********* END **********\n");
 
-console.log("### For...of : Loop entre  estruturas iteráveis ###\n");
+/*  *********************************************************
+    For...of : Loop entre  estruturas iteráveis
+    *********************************************************
+*/
+console.log("\n### For...of : Loop entre  estruturas iteráveis ====");
 
 function LogNumeros(nums) {
   for (numero of nums) {
@@ -277,7 +332,11 @@ console.log(LogNumeros(ofNumeros));
 
 console.log("********* END **********\n");
 
-console.log("### While : Loop entre  estruturas iteráveis ###\n");
+/*  *********************************************************
+    While : Loop entre  estruturas iteráveis
+    *********************************************************
+*/
+console.log("\n### While : Loop entre  estruturas iteráveis ====");
 
 function exemploWhile() {
   let num = 0;
@@ -290,7 +349,11 @@ console.log(exemploWhile());
 
 console.log("********* END **********\n");
 
-console.log("### do...While : Loop entre  estruturas iteráveis ###\n");
+/*  *********************************************************
+    do...While : Loop entre  estruturas iteráveis
+    *********************************************************
+*/
+console.log("\n### do...While : Loop entre  estruturas iteráveis ====");
 
 function exemploWhile() {
   let num = 0;
@@ -304,7 +367,11 @@ console.log(exemploWhile());
 
 console.log("********* END **********\n");
 
-console.log("### This : palavra reservada referência do contexto. ###\n");
+/*  *********************************************************
+    This : palavra reservada referência do contexto
+    *********************************************************
+*/
+console.log("\n### This : palavra reservada referência do contexto ====");
 
 const alguem = {
   firstName: "Aquiles",
@@ -320,8 +387,12 @@ console.log(alguem.fullName());
 
 console.log("********* END **********\n");
 
+/*  *********************************************************
+    Método Call/This : método utilizado para acessar o 'this'
+    *********************************************************
+*/
 console.log(
-  "### Método Call/This : método utilizado para acessar o **this**. ###\n"
+  "\n### Método Call/This : método utilizado para acessar o 'this' ===="
 );
 
 const aluno = {
@@ -343,7 +414,11 @@ console.log(navCall.call(alguem));
 
 console.log("********* END **********\n");
 
-console.log("### arrow functions ###\n");
+/*  *********************************************************
+    Arrow functions
+    *********************************************************
+*/
+console.log("\n### Arrow functions =========================");
 
 const arrowFunct = () => {
   return "Sem palavra reservada 'function'";
@@ -359,158 +434,3 @@ const soma = (a) => a;
 console.log(soma("Sem function, chaves e parênteses"));
 
 console.log("********* END **********\n");
-
-console.log("### 11 Atividade prática ###\n");
-
-const ano1 = [
-  { nome: "João", fase: 1, nota: 5, turma: "1B" },
-  { nome: "Sofia", fase: 1, nota: 9, turma: "1B" },
-  { nome: "Paulo", fase: 1, nota: 6, turma: "1C" },
-  { nome: "João", fase: 2, nota: 5, turma: "1B" },
-  { nome: "Sofia", fase: 2, nota: 9, turma: "1B" },
-  { nome: "Paulo", fase: 2, nota: 6, turma: "1C" },
-  { nome: "João", fase: 3, nota: 5, turma: "1B" },
-  { nome: "Sofia", fase: 3, nota: 9, turma: "1B" },
-  { nome: "Paulo", fase: 3, nota: 6, turma: "1C" },
-  { nome: "João", fase: 4, nota: 5, turma: "1B" },
-  { nome: "Sofia", fase: 4, nota: 9, turma: "1B" },
-  { nome: "Paulo", fase: 4, nota: 6, turma: "1C" },
-];
-
-var ano2 = [
-  { nome: "Sofia", fase: 1, nota: 5, turma: "1B" },
-  { nome: "Aquiles", fase: 1, nota: 6, turma: "1C" },
-  { nome: "João", fase: 2, nota: 5, turma: "1B" },
-  { nome: "Sofia", fase: 2, nota: 9, turma: "1B" },
-  { nome: "Aquiles", fase: 2, nota: 6, turma: "1C" },
-  { nome: "João", fase: 3, nota: 5, turma: "1B" },
-  { nome: "Sofia", fase: 3, nota: 9, turma: "1B" },
-  { nome: "Aquiles", fase: 3, nota: 6, turma: "1C" },
-  { nome: "João", fase: 4, nota: 5, turma: "1B" },
-  { nome: "Sofia", fase: 4, nota: 9, turma: "1B" },
-  { nome: "Aquiles", fase: 4, nota: 6, turma: "1C" },
-  { nome: "João", fase: 4, nota: 5, turma: "1B" },
-];
-
-ano2.sort(function (a, b) {
-  if (a.nome > b.nome) {
-    return 1;
-  }
-  if (a.nome < b.nome) {
-    return -1;
-  }
-  return 0;
-});
-
-console.log(ano2);
-/*
-  for (let i = 0; i < arrAlunos.length; i++) {
-      if (arr[i].nota === 2) {
-      console.log("xcxx");
-    }
-  }
-}
-
-var entrada;
-try {
-  if (entrada === undefined) {
-    console.log("Variável entrada existe, porém foi declarada sem valor!");
-  }
-  if (saida === undefined) {
-    console.log("Variável saida existe, porém foi declarada sem valor!");
-  }
-} catch (erro) {
-  console.log(`A variável ${erro.message} (Não declarada)`);
-}
-
-console.log("********* END **********\n");
-
-console.log("### 11 Atividade prática ###\n");
-
-let nomesPro = ["Aquiles", "Maria", "João", "sofia"];
-
-function mostrarProps(obj, nomeObjeto) {
-  var resultado = "";
-  for (var i in obj) {
-    if (obj.hasOwnProperty(i)) {
-      resultado += nomeObjeto + "." + i + " = " + obj[i] + "\n";
-    }
-  }
-  return console.log(resultado);
-}
-mostrarProps(alunoObj, "alunoObj");
-
-function alunoObj(nomePropriedade) {
-  for (i = 0; i != nomePropriedade.length; i++) {
-    this.nomePropriedade = 0;
-  }
-}
-var alunoObj = new Object();
-let nomePropriedade = "Aquiles";
-alunoObj[nomePropriedade] = 0;
-nomePropriedade = "Maria";
-alunoObj[nomePropriedade] = 0;
-
-*/
-
-var entrada;
-try {
-  if (entrada === undefined) {
-    console.log("Variável entrada existe, porém foi declarada sem valor!");
-  }
-  if (saida === undefined) {
-    console.log("Variável saida existe, porém foi declarada sem valor!");
-  }
-} catch (erro) {
-  console.log(`A variável ${erro.message} (Não declarada)`);
-}
-
-console.log("\n ********* END **********\n");
-
-console.log("### 12 Atividade prática ###\n");
-
-function validaArray(arr, tamanho) {
-  try {
-    if (!arr && !tamanho)
-      throw new ReferenceError("throw - Envie os parâmentros");
-
-    if (typeof arr !== "object")
-      throw new TypeError("throw - Array precisa ser do tipo object");
-
-    if (typeof tamanho !== "number")
-      throw new TypeError("throw - Array precisa ser do tipo number");
-
-    if (arr.length !== tamanho)
-      throw new RangeError(
-        "throw - Objeto com tamanho diferente do segundo parâmentro!"
-      );
-
-    return arr;
-  } catch (e) {
-    if (e instanceof ReferenceError) {
-      console.log("catch - Este erro é um ReferenceError!");
-      console.log(e.message);
-    } else if (e instanceof TypeError) {
-      console.log("catch - Este erro é um TypeError!");
-      console.log(e.message);
-    } else if (e instanceof RangeError) {
-      console.log("catch - Este erro é um RangeError!");
-      console.log(e.message);
-    } else {
-      console.log("catch - Tipo de erro não esperado:" + e);
-    }
-  }
-}
-
-console.log(validaArray([1, 2], 2));
-
-const myPromisse = new Primise((resolve, reject) => {
-  window.setTimeout(() => {
-    resolve("Resolvida");
-  }, 2000);
-});
-
-await myPromisse
-  .then((result) => result + " passando pelo then")
-  .then((result) => result + " e agora acabou!")
-  .catch((err) => console.log(err.message));
