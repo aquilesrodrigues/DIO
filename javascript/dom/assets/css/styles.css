@@ -51,7 +51,7 @@ button {
 button:hover {
 	background-color: #000401;
 }
-
+/* dark-mode "id" do button criado no js através do DOM */
 button.dark-mode {
 	background-color: #e5e8e8;
 	color: #4e545c;
