@@ -126,6 +126,7 @@ nome.includes("P") // retorna false por não encontrar o P
 nome.startsWith("J") // retorna true se a string começa com J
 nome.endsWith("?") // retorna true caso string finalize com ?
 nome.replace("ã", "a") // retorna outra string com substituição
+nome.shift(); // remove o primeiro elemento de um array e retorna esse elemento
 ```
 
 Objeto **string**
