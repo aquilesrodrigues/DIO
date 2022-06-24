@@ -459,7 +459,7 @@ B.O.M.(Browser Object Model) Arvore de dependência onde está o objeto Window q
 ### Estrutura da página HTML
 
 tag -
-id(#) - não pode ter mais de um com o mesmo id. É representado com o sharp antes do id. (**.id-nome**)
+id(#) - não pode ter mais de um com o mesmo id. É representado com o sharp antes do id. (**#id-nome**)
 classe(.) - Utilizamos o ponto . para representá-la. (**.classe-nome**)
 
 Retorna **o nó** com o **id** de nome _titulo_ encontrado dentro do seu html
