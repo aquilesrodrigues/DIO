@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans+Amatic+SC&display=swap");
 
+* {
+  font-family: "Open Sans", sans-serif;
+}
 /* 2 Botões circulares */
 #decrement,
 #increment {
@@ -21,7 +24,9 @@
   margin: 0 20px;
   font-size: 16pt;
 }
-
+#counter {
+  display: flex;
+}
 p {
   text-align: center;
 }
