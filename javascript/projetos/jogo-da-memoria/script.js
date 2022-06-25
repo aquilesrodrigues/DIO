@@ -9,7 +9,7 @@ const imgFrontPath = "./img/";
 const imgBackClass = "card-back";
 const imgBackAlt = "Verso da carta";
 const imgBackPath = "./img/";
-const total = 5;
+const total = 6;
 
 let div = document.createElement("div");
 let image = document.createElement("img");
@@ -22,7 +22,6 @@ let divs = [];
 for (let i = 0; i < cardDouble; ++i) {
   if (i >= total) {
     inc = cardDouble - i;
-    console.log(inc);
   } else {
     inc = inc + 1;
   }
