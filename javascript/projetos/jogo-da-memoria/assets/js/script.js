@@ -11,6 +11,10 @@ const imgBackAlt = "Verso da carta";
 const imgBackPath = "./img/";
 const total = 6;
 
+/* **************************************
+   Divs/classes/id/imagens com D.O.M
+   **************************************
+*/
 let div = document.createElement("div");
 let image = document.createElement("img");
 
