@@ -1,5 +1,6 @@
-/*
-  Parâmentros
+/* ******************************************
+   Constantes Para DIVs/IMG/Classes/Alt
+   para o D.O.M
 */
 const mainClass = "memory-game";
 const divClass = "card";
@@ -10,16 +11,58 @@ const imgBackClass = "card-back";
 const imgBackAlt = "Verso da carta";
 const imgBackPath = "./img/";
 const total = 6;
+const maxIncrement = 8;
+const minDecrement = 2;
 
 /* **************************************
-   Divs/classes/id/imagens com D.O.M
+   GETS - captura valores com D.O.M
    **************************************
 */
+let currentNumWrapper = document.getElementById("currentNum");
+let domIncrement = document.getElementById("increment");
+let domDecrement = document.getElementById("decrement");
+const main = document.getElementsByTagName("main")[0];
+
+/* **************************************
+   Objetos DOM - Divs/classes/id/imagens
+   **************************************
+*/
+main.classList.add(mainClass);
 let div = document.createElement("div");
 let image = document.createElement("img");
+// Número atual do span no html
+let currentNumber = Number(currentNumWrapper.innerHTML);
+/* *******************************************
+   Funções Incremento e Decremento no html.
+   Limite/variação total de cartas
+   Usando o D.O.M addEventListerner
+   *******************************************
+*/
 
-const main = document.getElementsByTagName("main")[0];
-main.classList.add(mainClass);
+domIncrement.addEventListener("click", function increment() {
+  if (currentNumber < maxIncrement) {
+    currentNumber++;
+    currentNumWrapper.innerHTML = currentNumber;
+  } else {
+    // desabilitar botão Incremento
+    domIncrement.Disabled = true;
+    domIncrement.style.cursor = "default";
+    // habilitar botão decremento
+    domDecrement.Disabled = false;
+    domDecrement.style.cursor = "pointer";
+    alert(`O valor ${currentNumber + 1}, excede o limite permitido!`);
+  }
+});
+
+domDecrement.addEventListener("click", function decrement() {});
+
+console.log(currentNumber);
+
+/* *******************************************
+   Criação das Divs/classes/id/imagens no html
+   Usando o D.O.M
+   *******************************************
+*/
 let cardDouble = total * 2;
 let inc = 0;
 let divs = [];
@@ -45,5 +88,6 @@ for (let i = 0; i < cardDouble; ++i) {
   divs[i].appendChild(imageFront);
   divs[i].appendChild(imageBack);
 }
+// Fim da montagem das divs/img da página html
 
 const cards = document.querySelectorAll(".card");
