@@ -18,14 +18,14 @@ domIncrement.addEventListener("click", function increment() {
   }
 });
 
-domDecrement.addEventListener("click", function increment() {
+domDecrement.addEventListener("click", function decrement() {
   if (currentNumber > 0 && currentNumber <= 10) {
     currentNumber--;
     currentNumberWrapper.innerHTML = currentNumber;
   } else {
     domIncrement.disabled = false;
     domIncrement.style.cursor = "pointer";
-    domDecrement.disabled = true;
+    domDecrement.Disabled = true;
     domDecrement.style.cursor = "default";
     alert(`O valor ${currentNumber - 1} excede o limite permitido!`);
   }
