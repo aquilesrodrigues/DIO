@@ -1,9 +1,33 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Amatic+SC&display=swap");
-
 * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background: rgba(196, 194, 194, 0.868);
   font-family: "Open Sans", sans-serif;
 }
 /* 2 Botões circulares */
+body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background-color: rgba(196, 194, 194, 0.868);
+}
+p {
+  text-align: center;
+}
+
+.cardCount {
+  position: absolute;
+  position: absolute;
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  text-align: center;
+  /* margin: -150px 0 0 -200; 
+    background: yellow;
+  */
+}
 #decrement,
 #increment {
   height: 40px;
@@ -17,16 +41,67 @@
   text-align: center;
   cursor: pointer;
 }
-
+/*
 #currentNumber {
   display: flex;
   align-items: center;
-  margin: 0 20px;
   font-size: 16pt;
 }
+*/
 #counter {
   display: flex;
 }
-p {
-  text-align: center;
+
+.memory-game {
+  height: 640px;
+  width: 640px;
+  margin-top: 90px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+  /* margin: auto; */
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+.card {
+  height: calc(33.333% - 10px);
+  width: calc(25% - 10px);
+  margin: 5px;
+  position: relative;
+  box-shadow: 0 4px 8px 0 rgba(196, 194, 194, 0.868);, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* box-shadow: 0px 0px 10px rgb(112, 112, 112) inset; */
+
+
+  cursor: pointer;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform 0.9s;
+}
+.card:active {
+  transform: scale(0.97);
+  transition: transform 0.3s;
+}
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  position: absolute;
+  border-radius: 15px;
+  background: #ffff;
+  backface-visibility: hidden;
+}
+.card-front {
+  transform: rotateY(180 deg);
+}
+
+.card.flip {
+  transform: rotateY(180 deg);
+}
+
+footer {
+  clear: both;
+  height: 100px;
+  background: #fc0;
 }

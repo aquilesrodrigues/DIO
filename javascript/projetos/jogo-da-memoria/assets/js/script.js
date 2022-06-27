@@ -23,7 +23,7 @@ for (let i = 0; i < cardDouble; ++i) {
   if (i >= total) {
     inc = cardDouble - i;
   } else {
-    inc = inc + 1;
+    inc++;
   }
   divs[i] = div.cloneNode();
   divs[i].setAttribute("class", divClass);
@@ -32,7 +32,7 @@ for (let i = 0; i < cardDouble; ++i) {
   const imageFront = document.createElement("img");
   const imageBack = document.createElement("img");
 
-  imageFront.setAttribute("clas", imgFrontClass);
+  imageFront.setAttribute("class", imgFrontClass);
   imageFront.setAttribute("alt", imgFrontAlt);
   imageFront.src = `${imgFrontPath}card${inc}.png`;
   imageBack.setAttribute("class", imgBackClass);
@@ -41,3 +41,5 @@ for (let i = 0; i < cardDouble; ++i) {
   divs[i].appendChild(imageFront);
   divs[i].appendChild(imageBack);
 }
+
+const cards = document.querySelectorAll(".card");
