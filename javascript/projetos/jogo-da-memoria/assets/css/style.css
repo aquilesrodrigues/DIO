@@ -69,9 +69,9 @@ p {
   width: calc(25% - 10px);
   margin: 5px;
   position: relative;
-  box-shadow: 0 4px 8px 0 rgba(196, 194, 194, 0.868);, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  /* box-shadow: 0px 0px 10px rgb(112, 112, 112) inset; */
+  box-shadow: 0 4px 8px 0 rgba(196, 194, 194, 0.868);
 
+  /* box-shadow: 0px 0px 10px rgb(112, 112, 112) inset; */
 
   cursor: pointer;
   transform: scale(1);
