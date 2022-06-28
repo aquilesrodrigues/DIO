@@ -22,9 +22,7 @@ p {
   top: 0px;
   left: 0px;
   text-align: center;
-  /* margin: -150px 0 0 -200; 
-    background: yellow;
-  */
+  margin: -150px 0 0 -200;
 }
 #decrement,
 #increment,
@@ -59,43 +57,35 @@ p {
   border-color: 2px solid rgb(1, 1, 1);
 }
 
-/*
-#currentNumber {
+#counter {
   display: flex;
   align-items: center;
   font-size: 16pt;
 }
-*/
-#counter {
-  display: flex;
-}
 
 .memory-game {
-  height: 640px;
-  width: 640px;
+  height: 480px;
+  width: 480px;
   margin-top: 90px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: auto;
-  /* margin: auto; */
   display: flex;
   flex-wrap: wrap;
-  perspective: 1000px;
+  /*perspective: 1000px; */
 }
 .card {
   height: calc(33.333% - 10px);
-  width: calc(25% - 10px);
+  width: calc(30% - 10px);
   margin: 5px;
   position: relative;
-  box-shadow: 0 4px 8px 0 rgba(196, 194, 194, 0.868);
-
+  box-shadow: 0 3px 6px 0 rgba(196, 194, 194, 0.868);
   cursor: pointer;
   transform: scale(1);
   transform-style: preserve-3d;
   transition: transform 0.9s;
 }
 .card:active {
-  transform: scale(0.97);
+  transform: scale(0.95);
   transition: transform 0.3s;
 }
 .card-front,
@@ -104,7 +94,7 @@ p {
   height: 100%;
   padding: 10px;
   position: absolute;
-  border-radius: 15px;
+  border-radius: 12px;
   background: #ffff;
   backface-visibility: hidden;
 }
@@ -119,5 +109,5 @@ p {
 footer {
   clear: both;
   height: 100px;
-  background: #fc0;
+  background: rgb(255, 255, 255);
 }
