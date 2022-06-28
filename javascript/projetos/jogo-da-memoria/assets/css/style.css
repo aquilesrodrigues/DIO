@@ -2,8 +2,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  background: rgba(196, 194, 194, 0.868);
-  font-family: "Open Sans", sans-serif;
 }
 /* 2 Botões circulares */
 body {
@@ -11,6 +9,8 @@ body {
   width: 100%;
   display: flex;
   background-color: rgba(196, 194, 194, 0.868);
+
+  font-family: "Open Sans", sans-serif;
 }
 p {
   text-align: center;
@@ -71,7 +71,7 @@ p {
   margin-right: auto;
   display: flex;
   flex-wrap: wrap;
-  /*perspective: 1000px; */
+  perspective: 1000px; /* pespectiva 3d */
 }
 .card {
   height: calc(33.333% - 10px);
@@ -80,9 +80,9 @@ p {
   position: relative;
   box-shadow: 0 3px 6px 0 rgba(196, 194, 194, 0.868);
   cursor: pointer;
-  transform: scale(1);
-  transform-style: preserve-3d;
-  transition: transform 0.9s;
+  transform: scale(1); /* pespectiva 3d */
+  transform-style: preserve-3d; /* pespectiva 3d */
+  transition: transform 0.9s; /* movimento 3d */
 }
 .card:active {
   transform: scale(0.95);
@@ -96,15 +96,14 @@ p {
   position: absolute;
   border-radius: 12px;
   background: #ffff;
-  backface-visibility: hidden;
-}
-.card-front {
-  transform: rotateY(180 deg);
+  backface-visibility: hidden; /* retira o verso do elemento */
 }
 
 .card.flip {
-  transform: rotateY(180 deg);
+  transform: rotateY(180 deg); /*animação rotação 3d */
 }
+
+/* flip card animação    */
 
 footer {
   clear: both;
