@@ -16,6 +16,13 @@ const minDecrement = 2;
 let currentNumber = minDecrement;
 let divSelectAll = [];
 
+// variáveis Comparação
+let firstCard, secondCard;
+//  VirarCartão false
+let hasFlippedCard = false;
+// Card bloqueado
+let lockBoard = false;
+
 /* **************************************
    GETS - captura valores com D.O.M
    **************************************
@@ -110,39 +117,99 @@ document.getElementById("shuffled").addEventListener("click", function () {
 
     divs[i].appendChild(imageFront);
     divs[i].appendChild(imageBack);
-  }
+  } //fim do for
+
   //Lista das Divs criadas
   divSelectAll = document.querySelectorAll(".card");
 
-  /* *******************************************
-   Função cria/remove classe "flip" no elemento
-   selecionado naquele momento. Usando o D.O.M 
-   *******************************************
+  /* *************************************
+   Função cria/remove classe "flip" no elemento selecionado naquele momento. Usando o D.O.M 
+   *******************************************/
+  function flipCard() {
+    if (lockBoard) {
+      return;
+    }
+    if (this === firstCard) {
+      return;
+    }
+    //adiciona classe flip no card selecionado
+    this.classList.add("flip");
+
+    //se cartão não está virado
+    if (!hasFlippedCard) {
+      hasFlippedCard = true;
+      firstCard = this;
+      console.log(`firstCard = ${firstCard}`);
+      return;
+    }
+    secondCard = this;
+    console.log(`secondCard = ${secondCard}`);
+    hasFlippedCard = false;
+    checkForMath();
+  }
+  /* *************************************
+     Função de verificação da igualdade dos 
+     objetos firstCard = secondCard
   */
-  /* Usar o operad Spread para converter em array
+  function checkForMath() {
+    if (firstCard.dataset.card === secondCard.dataset.card) {
+      DisabledCards();
+      return;
+    }
+    unFlipCards();
+  }
+
+  function DisabledCards() {
+    firstCard.removeEventListener("click", flipCard);
+    secondCard.removeEventListener("click", flipCard);
+
+    resetBoard();
+  }
+  function unFlipCards() {
+    lockBoard = true;
+    setTimeout(() => {
+      firstCard.classList.remove("flip");
+      secondCard.classList.remove("flip");
+      lockBoard = false;
+      // Zera variáveis
+      resetBoard();
+    }, 1500);
+  }
+  /* *************************************
+      Nesta função iremos zerar as varíaveis
+      possibilitando zerar seus status
+  */
+  function resetBoard() {
+    [hasFlippedCard, lockBoard] = [false, false];
+    [firstCard, secondCard] = [null, null];
+  }
+
+  /* *************************************
+    Além do Spread a segunda maneira de (+ iterações)
+     é fazer um loop sobre os elementos nodeList.
+     variavel.forEach(indice) =>{comandos}
+  */
+  divSelectAll.forEach((item) => {
+    item.addEventListener("click", flipCard);
+  });
+});
+
+/* insere classe "flip" no card
+   No css a classe flip vira carta
+*/
+
+// Fim da montagem das divs/img da página html
+
+/* Usar o operad Spread para converter em array
    forEach(indice) =>{comandos}
   */
-  /*
+/*
   [...divSelectAll].forEach((item) => {
     item.addEventListener("click", () => {
       item.classList.toggle("flip");
     });
   });
    */
-
-  /* Além do Spread a segunda maneira de (+ iterações)
-     é fazer um loop sobre os elementos nodeList.
-     variavel.forEach(indice) =>{comandos}
-  */
-  divSelectAll.forEach((item) => {
-    item.addEventListener("click", () => {
-      item.classList.toggle("flip");
-    });
-  });
-});
-
-// Fim da montagem das divs/img da página html
-
 /*
 function flipCard() {
   this.classList.toggle("flip");
@@ -180,13 +247,4 @@ divSelectAll.forEach(
   (it) => (it.onclick = () => inLista(`.class = ${it.classList[1]}`))
 );
 
-const hoverSpans = document.querySelectorAll("[data-hover-span]");
-
-hoverSpans.forEach(function (span) {
-  // Primeiro percorremos o array com forEach... cada elemento será representado pelo parâmetro "span"
-  span.addEventListener("mouseover", function () {
-    // agora sim podemos usar addEventListener em cada span!
-    span.classList.add("opacity");
-  });
-});
 */

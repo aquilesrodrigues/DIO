@@ -9,7 +9,6 @@ body {
   width: 100%;
   display: flex;
   background-color: rgba(196, 194, 194, 0.868);
-
   font-family: "Open Sans", sans-serif;
 }
 p {
@@ -85,8 +84,8 @@ p {
   transition: transform 0.9s; /* movimento 3d */
 }
 .card:active {
-  transform: scale(0.95);
-  transition: transform 0.3s;
+  transform: scale(0.97);
+  transition: transform 0.2s;
 }
 .card-front,
 .card-back {
@@ -98,9 +97,9 @@ p {
   background: #ffff;
   backface-visibility: hidden; /* retira o verso do elemento */
 }
-
+.card-front,
 .card.flip {
-  transform: rotateY(180 deg); /*animação rotação 3d */
+  transform: rotateY(180deg); /*animação rotação 3d */
 }
 
 /* flip card animação    */
