@@ -119,12 +119,27 @@ document.getElementById("shuffled").addEventListener("click", function () {
     divs[i].appendChild(imageBack);
   } //fim do for
 
-  //Lista das Divs criadas
+  //Lista das Divs criadas com classe "card"
   divSelectAll = document.querySelectorAll(".card");
+  // Ordena de forma randômica as divs card
+  divSelectAll.forEach((card) => {
+    let ramdomPosition = Math.floor(Math.random() * cardDouble);
+    card.style.order = ramdomPosition;
+  });
 
   /* *************************************
-   Função cria/remove classe "flip" no elemento selecionado naquele momento. Usando o D.O.M 
-   *******************************************/
+    Div que exibe total do jogo
+    **************************************** 
+  */
+
+  divLast = div.cloneNode();
+
+  /* *******************************************
+    Função cria/remove classe "flip" no elemento 
+    selecionado naquele momento. Usando o D.O.M 
+    ********************************************
+  */
+
   function flipCard() {
     if (lockBoard) {
       return;
@@ -154,6 +169,9 @@ document.getElementById("shuffled").addEventListener("click", function () {
   function checkForMath() {
     if (firstCard.dataset.card === secondCard.dataset.card) {
       DisabledCards();
+      const classFlipAll = document.querySelectorAll(".flip");
+
+      verifyTotalFlip(classFlipAll.length, cardDouble);
       return;
     }
     unFlipCards();
@@ -175,6 +193,17 @@ document.getElementById("shuffled").addEventListener("click", function () {
       resetBoard();
     }, 1500);
   }
+  /*
+    A cada par comparado iremos verificar 
+    se o total de cartões com classe flip
+    é igual
+  */
+  function verifyTotalFlip(totalClass, totalCard) {
+    if (totalClass == totalCard) {
+      console.log(`DIVs com Class ${totalClass} = Total de Cards ${totalCard}`);
+    }
+  }
+
   /* *************************************
       Nesta função iremos zerar as varíaveis
       possibilitando zerar seus status
