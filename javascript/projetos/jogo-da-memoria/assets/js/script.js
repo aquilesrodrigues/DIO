@@ -12,10 +12,9 @@ const imgBackAlt = "Verso da carta";
 const imgBackPath = "./img/";
 const maxIncrement = 6;
 const minDecrement = 2;
-// var
+// var exibição total de cartas
 let currentNumber = minDecrement;
 let divSelectAll = [];
-let data = new Date();
 
 // variáveis Comparação
 let firstCard, secondCard;
@@ -87,8 +86,9 @@ domDecrement.addEventListener("click", function decrement() {
 */
 
 document.getElementById("shuffled").addEventListener("click", function () {
-  let timeFirst = data.getHours();
-  console.log(timeFirst);
+  // captura a data e hora início da partida
+  let hourIn = new Date();
+  console.log(`Início da partida: ${hourIn}`);
   //limpar elemntos filhos anteriores no main
   main.innerHTML = "";
   // oculta div central de mensagem
@@ -204,8 +204,16 @@ document.getElementById("shuffled").addEventListener("click", function () {
   */
   function verifyTotalFlip(totalClass, totalCard) {
     if (totalClass == totalCard) {
+      let hourOut = new Date();
       console.log(`DIVs com Class ${totalClass} = Total de Cards ${totalCard}`);
-      // oculta div central de mensagem
+      // exibir div central de mensagem
+      document.getElementById(
+        "texto"
+      ).innerHTML = `Você conseguiu!<br> Você gastou: ${timeRangeTxt(
+        hourIn,
+        hourOut
+      )} para concluir`;
+      document.getElementById("thumb").src = `${imgFrontPath}trofeu.png`;
       document.getElementById("winner").style.display = "block";
     }
   }
@@ -217,6 +225,20 @@ document.getElementById("shuffled").addEventListener("click", function () {
   function resetBoard() {
     [hasFlippedCard, lockBoard] = [false, false];
     [firstCard, secondCard] = [null, null];
+  }
+  /* *************************************
+      Nesta função calculamos intervalo por
+      segundos
+  */
+  function timeRangeTxt(timein, timeout) {
+    // não usado
+    let diffMs = timeout - timein;
+    let diffHrs = Math.floor((diffMs % 86400000) / 3600000);
+    let diffMin = Math.round(((diffMs % 86400000) % 3600000) / 60000);
+    // usado
+    let diff = new Date(timeout - timein);
+    let elapsedTime = `${diff.getUTCMinutes()} minutos ${diff.getUTCSeconds()} segundos`;
+    return elapsedTime;
   }
 
   /* *************************************
