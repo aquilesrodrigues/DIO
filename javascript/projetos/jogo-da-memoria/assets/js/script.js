@@ -15,6 +15,7 @@ const minDecrement = 2;
 // var
 let currentNumber = minDecrement;
 let divSelectAll = [];
+let data = new Date();
 
 // variáveis Comparação
 let firstCard, secondCard;
@@ -39,7 +40,7 @@ const main = document.getElementsByTagName("main")[0];
 main.classList.add(mainClass);
 // Número atual para span no html
 currentNumWrapper.innerHTML = currentNumber;
-
+//document.getElementById("final").style.display = "none";
 let div = document.createElement("div");
 let image = document.createElement("img");
 
@@ -86,8 +87,13 @@ domDecrement.addEventListener("click", function decrement() {
 */
 
 document.getElementById("shuffled").addEventListener("click", function () {
+  let timeFirst = data.getHours();
+  console.log(timeFirst);
   //limpar elemntos filhos anteriores no main
   main.innerHTML = "";
+  // oculta div central de mensagem
+  document.getElementById("winner").style.display = "none";
+
   //Iniciar criação de DIVS e seus nós
   let cardDouble = currentNumber * 2;
   let inc = 0;
@@ -131,8 +137,6 @@ document.getElementById("shuffled").addEventListener("click", function () {
     Div que exibe total do jogo
     **************************************** 
   */
-
-  divLast = div.cloneNode();
 
   /* *******************************************
     Função cria/remove classe "flip" no elemento 
@@ -201,6 +205,8 @@ document.getElementById("shuffled").addEventListener("click", function () {
   function verifyTotalFlip(totalClass, totalCard) {
     if (totalClass == totalCard) {
       console.log(`DIVs com Class ${totalClass} = Total de Cards ${totalCard}`);
+      // oculta div central de mensagem
+      document.getElementById("winner").style.display = "block";
     }
   }
 
@@ -228,52 +234,3 @@ document.getElementById("shuffled").addEventListener("click", function () {
 */
 
 // Fim da montagem das divs/img da página html
-
-/* Usar o operad Spread para converter em array
-   forEach(indice) =>{comandos}
-  */
-/*
-  [...divSelectAll].forEach((item) => {
-    item.addEventListener("click", () => {
-      item.classList.toggle("flip");
-    });
-  });
-   */
-/*
-function flipCard() {
-  this.classList.toggle("flip");
-}
-/*
-/* *******************************************
-   Foreach percorre cada card  a procura do 
-   evento click. Caso encontrado executa flipCard
-   *******************************************
-*/
-//
-
-/*
-[...divSelectAll].forEach((card) => {
-  card.addEventListener("click", () => {
-    card.setAttribute("class", "teste");
-  });
-});
-
-divSelectAll.forEach((item) => {
-  item.addEventListener("click", () => {
-    console.log(`3: Text = ${item.innerText}`);
-  });
-});
-*/
-
-/*
-for (let i = 0; i < divSelectAll.length; i++) {
-  divSelectAll[i].addEventListener("click", function inseriLista() {
-    divSelectAll.classList.toggle("flip");
-  });
-}
-
-divSelectAll.forEach(
-  (it) => (it.onclick = () => inLista(`.class = ${it.classList[1]}`))
-);
-
-*/

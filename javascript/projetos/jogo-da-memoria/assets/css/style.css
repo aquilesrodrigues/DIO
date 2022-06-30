@@ -8,6 +8,8 @@ body {
   height: 100%;
   width: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: rgba(196, 194, 194, 0.868);
   font-family: "Open Sans", sans-serif;
 }
@@ -25,7 +27,8 @@ p {
 }
 #decrement,
 #increment,
-#shuffled {
+#shuffled,
+#winner {
   /* border: 2px solid rgb(1, 1, 1);  */
   border: none;
   background-color: rgb(151, 149, 149);
@@ -66,8 +69,8 @@ p {
   height: 480px;
   width: 480px;
   margin-top: 90px;
-  margin-left: auto;
-  margin-right: auto;
+
+  justify-content: center;
   display: flex;
   flex-wrap: wrap;
   perspective: 1000px; /* pespectiva 3d */
@@ -102,6 +105,19 @@ p {
   transform: rotateY(180deg); /*animação rotação 3d */
 }
 
+.img-message {
+  width: 70px;
+  height: 70px;
+}
+.message {
+  width: 450px;
+  height: 200px;
+  position: absolute;
+  border-radius: 12px;
+  border: 1px solid #000;
+  background: #232323;
+  z-index: 999999;
+}
 /* flip card animação    */
 
 footer {
