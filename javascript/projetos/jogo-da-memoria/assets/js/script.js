@@ -209,11 +209,10 @@ document.getElementById("shuffled").addEventListener("click", function () {
       // exibir div central de mensagem
       document.getElementById(
         "texto"
-      ).innerHTML = `Você conseguiu!<br> Você gastou: ${timeRangeTxt(
-        hourIn,
-        hourOut
-      )} para concluir`;
-      document.getElementById("thumb").src = `${imgFrontPath}trofeu.png`;
+      ).innerHTML = `Tempo:<br> Você gastou: ${timeRangeTxt(hourIn, hourOut)}`;
+      document.getElementById(
+        "thumb"
+      ).src = `${imgFrontPath}icons8-clock-64.png`;
       document.getElementById("winner").style.display = "block";
     }
   }

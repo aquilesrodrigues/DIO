@@ -1,13 +1,19 @@
-# Oi, tudo bem? Chegou aqui através do curso, certo? 🙃
+# Jogo da memória
 
-Esse é o repositório da nossa aula de Javascript, na qual vamos fazer um jogo da memória com a temática de Super Mario! 
+## Os requisitos são
 
-### Os requisitos são:
+Oito imagens compõem o número de cartas a serem exibidas no intervalo de 2 à 8 cartas de baralho.
 
-* [HTML básico](https://www.w3schools.com/html/)
-* [CSS básico](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
-* [Javascript básico](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
- 
+Dois botões de incremento e decremento foram inseridos para a escolha da quantidade de imagens a serem utilizadas. Ao chegar o limite de incremento o botão será desativado, o estilo do cursor alterado para default e um alert será lançado informando limite excedido. O mesmo acontecendo para o decremento.
 
+Após escolha, o javascript criar o dobro de divs que compõe o tabulero de cartas com alinhamento de auto-ajuste das cartas.
+
+Os arquivos de imagem salvos na pasta img soma 8 imagens.
+
+Seus nomes iniciam com "card"+(Número sequencial), respeitando o limite definido na variável (maxIncrement).
+
+Isso possibilita a criação dinâmica das divs com o parâmetro (data-card) para cada carta.
+
+Utilizando todo o código base possibilitamos os recursos de virar cartas, bloquear cartas já validadas. Também inseri mensagem de finalização do jogo.
 
 ## 🚀 Let's code! 🚀
