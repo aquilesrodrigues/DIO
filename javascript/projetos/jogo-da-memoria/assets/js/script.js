@@ -210,9 +210,7 @@ document.getElementById("shuffled").addEventListener("click", function () {
       document.getElementById(
         "texto"
       ).innerHTML = `Tempo:<br> Você gastou: ${timeRangeTxt(hourIn, hourOut)}`;
-      document.getElementById(
-        "thumb"
-      ).src = `${imgFrontPath}icons8-clock-64.png`;
+      document.getElementById("thumb").src = `${imgFrontPath}time-alarm.PNG`;
       document.getElementById("winner").style.display = "block";
     }
   }
