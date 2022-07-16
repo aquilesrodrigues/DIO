@@ -12,7 +12,7 @@
         padding: 0;
         display: flex;
         border: 4px solid black;
-
+        /* ---------------------- */
         max-width: 200px;
         background-color: blue;
       }
@@ -21,7 +21,7 @@
         padding: 0;
         display: flex;
         border: 4px solid blue;
-
+        /* -------------------- */
         list-style: none;
       }
       .flex-items_div {
@@ -32,18 +32,23 @@
         margin: 5px;
       }
       .flex-items_list {
-        background: blue;
+        background-color: blue;
         height: 50px;
         width: 50px;
         font-size: 20px;
         text-align: center;
         margin: 5px;
-
+        /*  -------------------------  */
         color: white;
         line-height: 50px;
       }
+      /* Direção linhas */
       .direction_row {
         flex-direction: row;
+        border: 4px solid orangered;
+      }
+      .direction_row li {
+        background-color: orangered;
       }
       .direction_row-reverse {
         flex-direction: row-reverse;
@@ -52,15 +57,22 @@
       .direction_row-reverse li {
         background-color: red;
       }
+      /* Direção Coluna */
       .direction_column {
         flex-direction: column;
+        border: 4px solid blue;
+        float: left;
+      }
+      .direction_column li {
+        background-color: blue;
       }
       .direction_column-reverse {
         flex-direction: column-reverse;
-        border: 4px solid red;
+        float: right;
+        border: 4px solid purple;
       }
       .direction_column-reverse li {
-        background-color: red;
+        background-color: purple;
       }
     </style>
   </head>
@@ -78,6 +90,20 @@
       <li class="flex-items_list">5</li>
     </ul>
     <ul class="flex-container_list direction_row-reverse">
+      <li class="flex-items_list">1</li>
+      <li class="flex-items_list">2</li>
+      <li class="flex-items_list">3</li>
+      <li class="flex-items_list">4</li>
+      <li class="flex-items_list">5</li>
+    </ul>
+    <ul class="flex-container_list direction_column">
+      <li class="flex-items_list">1</li>
+      <li class="flex-items_list">2</li>
+      <li class="flex-items_list">3</li>
+      <li class="flex-items_list">4</li>
+      <li class="flex-items_list">5</li>
+    </ul>
+    <ul class="flex-container_list direction_column-reverse">
       <li class="flex-items_list">1</li>
       <li class="flex-items_list">2</li>
       <li class="flex-items_list">3</li>
