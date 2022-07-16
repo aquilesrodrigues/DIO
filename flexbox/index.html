@@ -5,21 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fundamentos - Flex direction</title>
+    <!-- Estilo com flexbox-->
     <style>
-      .flex_div-container {
+      .flex-container_div {
         margin: 0;
         padding: 0;
         display: flex;
         max-width: 200px;
         border: 2px solid black;
       }
-      .flex_list-container {
+      .flex-container_list {
         margin: 0;
         padding: 0;
         display: flex;
         list-style: none;
       }
-      .flex_div-item {
+      .flex-items_div {
         background-color: aqua;
         width: 50px;
         font-size: 20px;
@@ -27,7 +28,7 @@
         text-align: center;
         margin: 5px;
       }
-      .flex_list-item {
+      .flex-items_list {
         background: blue;
         height: 50px;
         width: 50px;
@@ -40,17 +41,17 @@
     </style>
   </head>
   <body>
-    <div class="flex_div-container">
-      <div class="flex_div-item">div 1</div>
-      <div class="flex_div-item">div 2</div>
-      <div class="flex_div-item">div 3</div>
+    <div class="flex-container_div">
+      <div class="flex-items_div">div 1</div>
+      <div class="flex-items_div">div 2</div>
+      <div class="flex-items_div">div 3</div>
     </div>
-    <ul class="flex_list-container">
-      <li class="flex_list-item">1</li>
-      <li class="flex_list-item">2</li>
-      <li class="flex_list-item">3</li>
-      <li class="flex_list-item">4</li>
-      <li class="flex_list-item">5</li>
+    <ul class="flex-container_list">
+      <li class="flex-items_list">1</li>
+      <li class="flex-items_list">2</li>
+      <li class="flex-items_list">3</li>
+      <li class="flex-items_list">4</li>
+      <li class="flex-items_list">5</li>
     </ul>
   </body>
 </html>
