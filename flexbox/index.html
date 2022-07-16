@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fundamentos - display flex</title>
+    <title>Fundamentos - Flex direction</title>
     <style>
       .flex {
         max-width: 300px;
@@ -12,17 +12,39 @@
         border: 2px solid black;
         display: flex;
       }
+      .flex-container {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        list-style: none;
+      }
       .item {
         background-color: aqua;
         margin: 5px;
       }
+      .item-direction {
+        background: blue;
+        height: 50px;
+        width: 50px;
+        line-height: 50px;
+        font-size: 20px;
+        color: white;
+        text-align: center;
+      }
     </style>
   </head>
   <body>
-    <div class="flex">
-      <div class="item">item 1</div>
-      <div class="item">item 2</div>
-      <div class="item">item 3</div>
+    <ul class="flex-container">
+      <li class="item-direction">1</li>
+      <li class="item-direction">2</li>
+      <li class="item-direction">3</li>
+      <li class="item-direction">4</li>
+      <li class="item-direction">5</li>
+    </ul>
+    <div class="flex-container">
+      <div class="item-direction">item 1</div>
+      <div class="item-direction">item 2</div>
+      <div class="item-direction">item 3</div>
     </div>
   </body>
 </html>
