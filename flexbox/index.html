@@ -11,20 +11,23 @@
         margin: 0;
         padding: 0;
         display: flex;
+        border: 4px solid black;
+
         max-width: 200px;
-        border: 2px solid black;
+        background-color: blue;
       }
       .flex-container_list {
         margin: 0;
         padding: 0;
         display: flex;
+        border: 4px solid blue;
+
         list-style: none;
       }
       .flex-items_div {
-        background-color: aqua;
+        background-color: wheat;
         width: 50px;
         font-size: 20px;
-        align-items: flex-start;
         text-align: center;
         margin: 5px;
       }
@@ -32,11 +35,32 @@
         background: blue;
         height: 50px;
         width: 50px;
-        line-height: 50px;
         font-size: 20px;
-        color: white;
         text-align: center;
         margin: 5px;
+
+        color: white;
+        line-height: 50px;
+      }
+      .direction_row {
+        flex-direction: row;
+      }
+      .direction_row-reverse {
+        flex-direction: row-reverse;
+        border: 4px solid red;
+      }
+      .direction_row-reverse li {
+        background-color: red;
+      }
+      .direction_column {
+        flex-direction: column;
+      }
+      .direction_column-reverse {
+        flex-direction: column-reverse;
+        border: 4px solid red;
+      }
+      .direction_column-reverse li {
+        background-color: red;
       }
     </style>
   </head>
@@ -46,7 +70,14 @@
       <div class="flex-items_div">div 2</div>
       <div class="flex-items_div">div 3</div>
     </div>
-    <ul class="flex-container_list">
+    <ul class="flex-container_list direction_row">
+      <li class="flex-items_list">1</li>
+      <li class="flex-items_list">2</li>
+      <li class="flex-items_list">3</li>
+      <li class="flex-items_list">4</li>
+      <li class="flex-items_list">5</li>
+    </ul>
+    <ul class="flex-container_list direction_row-reverse">
       <li class="flex-items_list">1</li>
       <li class="flex-items_list">2</li>
       <li class="flex-items_list">3</li>
