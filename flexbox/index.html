@@ -8,24 +8,28 @@
     <!-- Estilo com flexbox-->
     <style>
       .flex-container_div {
+        /* Primeiramente ativar o FLEX */
+        display: flex;
         margin: 0;
         padding: 0;
-        display: flex;
         border: 4px solid black;
         /* ---------------------- */
+        height: 150px;
         max-width: 200px;
         background-color: blue;
       }
       .flex-container_list {
+        /* Primeiramente ativar o FLEX */
+        display: flex;
         margin: 0;
         padding: 0;
-        display: flex;
         border: 4px solid blue;
         /* -------------------- */
         list-style: none;
       }
       .flex-items_div {
         background-color: wheat;
+        height: 50px;
         width: 50px;
         font-size: 20px;
         text-align: center;
@@ -73,6 +77,10 @@
       }
       .direction_column-reverse li {
         background-color: purple;
+      }
+      .nowrap {
+        /* é o comportamento padrão do FLEX, mas, para fins didáticos estou criando esta classe */
+        flex-wrap: nowrap;
       }
     </style>
   </head>
