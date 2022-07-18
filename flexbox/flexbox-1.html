@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fundamentos - Flex direction</title>
-    <!-- Estilo com flexbox-->
+    <title>Fundamentos - Flex direction e Wrap</title>
+    <!-- Estilo com flexbox -->
     <style>
       .flex-container_div {
         /* Primeiramente ativar o FLEX */
@@ -14,13 +14,14 @@
         padding: 0;
         border: 4px solid black;
         /* ---------------------- */
-        height: 150px;
-        max-width: 200px;
+        height: 200px;
+        max-width: 280px;
         background-color: blue;
       }
       .flex-container_list {
         /* Primeiramente ativar o FLEX */
         display: flex;
+
         margin: 0;
         padding: 0;
         border: 4px solid blue;
@@ -29,11 +30,14 @@
       }
       .flex-items_div {
         background-color: wheat;
-        height: 50px;
+        height: 50%;
         width: 100px;
-        font-size: 20px;
+        /* determinar a largura mínima do item */
+        min-width: 50px;
+        font-size: 24px;
         text-align: center;
         margin: 5px;
+        line-height: 50px;
       }
       .flex-items_list {
         background-color: blue;
@@ -82,10 +86,36 @@
         /* é o comportamento padrão do FLEX, mas, para fins didáticos estou criando esta classe */
         flex-wrap: nowrap;
       }
+      .wrap {
+        /*  */
+        flex-wrap: wrap;
+      }
+      .wrap-reverse {
+        /*  */
+        flex-wrap: wrap-reverse;
+      }
     </style>
   </head>
   <body>
+    <h1>Flexbox</h1>
+    <h2>no wrap</h2>
     <div class="flex-container_div">
+      <div class="flex-items_div">div 1</div>
+      <div class="flex-items_div">div 2</div>
+      <div class="flex-items_div">div 3</div>
+      <div class="flex-items_div">div 4</div>
+      <div class="flex-items_div">div 5</div>
+      <div class="flex-items_div">div 6</div>
+    </div>
+    <h2>wrap</h2>
+    <div class="flex-container_div wrap">
+      <div class="flex-items_div">div 1</div>
+      <div class="flex-items_div">div 2</div>
+      <div class="flex-items_div">div 3</div>
+    </div>
+
+    <h2>Wrap Reverse</h2>
+    <div class="flex-container_div wrap-reverse">
       <div class="flex-items_div">div 1</div>
       <div class="flex-items_div">div 2</div>
       <div class="flex-items_div">div 3</div>
