@@ -13,7 +13,7 @@ echo "- Instalar o apache2"
 apt-get install apache2 -y
 
 echo "- instalar o unzip"
-apt install unzip
+apt-get install unzip
 
 echo "- Criar pasta tmp para baixar aplicação web"
 mkdir /var/www/tmp
